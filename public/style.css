@@ -1,0 +1,4 @@
+/* Testar så att style.css är korrekt implementerad/länkad */
+* {
+  background-color: aqua;
+}
