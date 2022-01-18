@@ -19,8 +19,8 @@ const AddCityForm = () => {
 
     let errors = [];
 
-    if (city === '') { errors.push('You must enter a city name to add a new clock') }
-    if (timeZone === "") { errors.push('You have to select a time zone to add a new clock') }
+    if (city === '') { errors.push('You need to enter a city name') }
+    if (timeZone === "") { errors.push('You need to select a time zone') }
     setErrors(errors.length === 0 ? [] : errors)
   }
 
