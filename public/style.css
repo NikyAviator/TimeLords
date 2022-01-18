@@ -1,4 +1,9 @@
 /* Testar så att style.css är korrekt implementerad/länkad */
-* {
-  background-color: #7fc8a9;
+.navbar-green {
+  background-color: #5f7a61;
+  height: 100px;
+}
+
+.navbar-toggler-icon {
+  color: white;
 }

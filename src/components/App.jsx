@@ -5,11 +5,12 @@ import Footer from '../components/Footer';
 import Home from '../pages/Home';
 import Favorites from '../pages/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// React Bootstrap
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
