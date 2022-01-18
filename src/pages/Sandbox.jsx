@@ -1,6 +1,7 @@
 import React from 'react'
 import Artur from './Artur'
 import { useParams } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
 
 const Sandbox = () => {
   let { name } = useParams()
@@ -13,7 +14,9 @@ const Sandbox = () => {
 
   return (
     <>
-      {getSandbox(name)}
+      <Container className="p-3">
+        {getSandbox(name)}
+      </Container>
     </>
   )
 }
