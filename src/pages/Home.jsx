@@ -10,7 +10,10 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container className="mt-3 pt-5">
+      <Container className="pt-2">
+        <h3>Biggest Cities:</h3>
+      </Container>
+      <Container className="mt-3 pt-3">
         <Row>
           <Col xs={6} md={4}>
             <Card style={{ width: '18rem' }}>
@@ -53,7 +56,10 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container className="mt-3 pt-5">
+      <Container className="pt-5">
+        <h3>My Cities:</h3>
+      </Container>
+      <Container className="mt-3 pt-3">
         <Row>
           <Col xs={6} md={4}>
             <Card style={{ width: '18rem' }}>
