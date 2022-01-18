@@ -10,7 +10,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="mt-3 pt-5">
         <Row>
           <Col xs={6} md={4}>
             <Card style={{ width: '18rem' }}>
@@ -53,7 +53,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="mt-3 pt-5">
         <Row>
           <Col xs={6} md={4}>
             <Card style={{ width: '18rem' }}>
