@@ -1,14 +1,27 @@
 
-import { Button } from 'react-bootstrap';
-
+import { Col, Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 function City(props) {
-  let { city, timeZoneName } = props;
+  let { city } = props;
   let { city_name } = city;
 
 
   return <>
-    <Button className="city" onClick={() => timeZoneName(city_name)}
-      variant="secondary"> {city_name.substring(city_name.indexOf("/") + 1)}</Button>
+
+    <Col xs={6} md={4}>
+      <Card>
+        <Card.Img variant="top" src="https://picsum.photos/200/200" />
+        <Card.Body>
+          <Link to="/timezone-info"
+            state={{ city_name }}
+          >
+            <Button variant="light" className="city">
+              {city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}</Button></Link>
+
+
+        </Card.Body>
+      </Card>
+    </Col>
 
   </ >
 }

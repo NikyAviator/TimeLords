@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Home from '../pages/Home';
 import Favorites from '../pages/Favorites';
 import Sandbox from '../pages/Sandbox';
-import Cities from '../pages/Cities';
+import TimezoneInfo from '../pages/Detail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
@@ -16,9 +16,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/timezone-info" element={<TimezoneInfo />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/sandbox/:name" element={<Sandbox />} />
-        <Route path="/cities" element={<Cities />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
