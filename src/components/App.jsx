@@ -13,6 +13,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
