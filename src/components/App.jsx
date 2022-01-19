@@ -7,8 +7,7 @@ import Favorites from '../pages/Favorites';
 import Sandbox from '../pages/Sandbox';
 import Cities from '../pages/Cities';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// React Bootstrap
-import { Container, Row, Col, Button } from 'react-bootstrap';
+
 
 function App() {
   return (
