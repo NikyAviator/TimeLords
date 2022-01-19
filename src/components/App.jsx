@@ -7,6 +7,7 @@ import Favorites from '../pages/Favorites';
 import Sandbox from '../pages/Sandbox';
 import Cities from '../pages/Cities';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 
 function App() {

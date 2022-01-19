@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Navbar, Card } from 'react-bootstrap';
 function Home() {
   return (
     <>
-      <Container>
+      <Container className="mt-3 px-5">
         <Row>
           <Col>
             <img src="images/Logo.svg" alt="Logo for TimeLords"></img>
