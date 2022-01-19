@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "city_name": "Asia/Tokyo"
+  },
+  {
+    "id": 2,
+    "city_name": "America/Los_Angeles"
+  },
+  {
+    "id": 3,
+    "city_name": "Asia/Shanghai"
+  },
+  {
+    "id": 4,
+    "city_name": "America/Chicago"
+  },
+  {
+    "id": 5,
+    "city_name": "America/New_York"
+  },
+  {
+    "id": 6,
+    "city_name": "Asia/Manila"
+  },
+  {
+    "id": 7,
+    "city_name": "Australia/Sydney"
+  },
+  {
+    "id": 8,
+    "city_name": "Africa/Tunis"
+  },
+  {
+    "id": 9,
+    "city_name": "Europe/London"
+  },
+  {
+    "id": 10,
+    "city_name": "Europe/Stockholm"
+  },
+  {
+    "id": 11,
+    "city_name": "Europe/Paris"
+  },
+  {
+    "id": 12,
+    "city_name": "Asia/Hong_Kong"
+  },
+  {
+    "id": 13,
+    "city_name": "Asia/Karachi"
+  },
+  {
+    "id": 14,
+    "city_name": "Asia/Bangkok"
+  },
+  {
+    "id": 15,
+    "city_name": "Europe/Istanbul"
+  },
+  {
+    "id": 16,
+    "city_name": "America/Sao_Paulo"
+  },
+  {
+    "id": 17,
+    "city_name": "Africa/Johannesburg"
+  },
+  {
+    "id": 18,
+    "city_name": "America/Mexico_City"
+  },
+  {
+    "id": 19,
+    "city_name": "Africa/Algiers"
+  },
+  {
+    "id": 20,
+    "city_name": "Europe/Moscow"
+  }
+]
