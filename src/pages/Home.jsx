@@ -13,8 +13,8 @@ function Home() {
       <Container className="pt-2">
         <h3>Biggest Cities:</h3>
       </Container>
-      <Container className="mt-3 pt-3">
-        <Row>
+      <Container className="mt-3 px-5 ">
+        <Row className="g-5 g-md-5">
           <Col xs={12} md={4}>
             <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
@@ -59,8 +59,8 @@ function Home() {
       <Container className="pt-5">
         <h3>My Cities:</h3>
       </Container>
-      <Container className="mt-3 pt-3">
-        <Row>
+      <Container className="mt-3 px-5">
+        <Row className="g-5 g-md-5">
           <Col xs={12} md={4}>
             <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
