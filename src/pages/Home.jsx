@@ -15,8 +15,8 @@ function Home() {
       </Container>
       <Container className="mt-3 pt-3">
         <Row>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -28,8 +28,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -41,8 +41,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -61,8 +61,8 @@ function Home() {
       </Container>
       <Container className="mt-3 pt-3">
         <Row>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -74,8 +74,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -87,8 +87,8 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={6} md={4}>
-            <Card style={{ width: '18rem' }}>
+          <Col xs={12} md={4}>
+            <Card >
               <Card.Img variant="top" src="https://picsum.photos/200/200" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
