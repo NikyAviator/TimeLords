@@ -1,11 +1,13 @@
 
 import { Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 function City(props) {
   let { city } = props;
   let { city_name } = city;
 
 
+  //Set each city and the name of it 
   return <>
 
     <Col xs={6} md={4}>
