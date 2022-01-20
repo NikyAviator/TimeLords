@@ -21,15 +21,16 @@ function Detail() {
   }, []);
 
   let { timezone, datetime } = timeZoneInfo; //These information is from worldtimeapi.org
-
+  if (datetime != undefined) { datetime = datetime.slice(0, 10); }
 
   //the timezone information are ferched from API is stored in "timeZoneInfo"
   //we need to render this on the screen I guess
 
-
-  return <>
-    <h1>{timezone}</h1>
-    <h1>{datetime}</h1>
-  </>
+  if (city_name != ' ' && timeZoneInfo != undefined) {
+    return <>
+      <h1>{timezone}</h1>
+      <h1>{datetime}</h1>
+    </>
+  }
 }
 export default Detail;

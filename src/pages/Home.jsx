@@ -1,6 +1,6 @@
 import React from 'react';
 import CityList from '../components/CityList';
-import { Container, Row, Col, Button, Navbar, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Navbar, Card, Figure } from 'react-bootstrap';
 function Home() {
   return (
     <>
@@ -8,7 +8,10 @@ function Home() {
         <Container className="mt-3 px-5">
           <Row>
             <Col>
-              <img src="images/Logo.svg" alt="Logo for TimeLords"></img>
+              <Figure src="images/Logo.svg" alt="Logo for TimeLords">
+                <Figure.Image
+                  src='images/Logo.svg' /> <>{/* Logo is responsive now */}</>
+              </Figure>
             </Col>
           </Row>
         </Container>
