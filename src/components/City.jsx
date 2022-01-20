@@ -12,7 +12,9 @@ function City(props) {
 
     <Col xs={6} md={4}>
       <Card>
-        <Card.Img variant="top" src="https://picsum.photos/200/200" />
+        <>{ /* Link to Unsplash and generate random picture that matches the city */}</>
+        <Card.Img variant="top"
+          src={`https://source.unsplash.com/random/640x360/?${city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}`} />
         <Card.Body>
           <Link to="/timezone-info"
             state={{ city_name }}
