@@ -14,7 +14,7 @@
 /* CSS for the analog clock */
 
 .analogClock{
-  background-color: cyan;
+  background-color: rgb(213,238,187);
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -33,19 +33,17 @@
   position: absolute;
   bottom: 50%;
   left: 50%;
-  background-color: black;
   border: 1px solid white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transform-origin: bottom;
   z-index: 10;
-  /* transform: translateX(-70%); */
 }
 
 .analogClock .secondHand {
   width: 3px;
   height: 45%;
-  color: red;
+   background-color: rgb(127,200,169);
   transform: translateX(-100%);
   transform: rotateZ(30deg);
 }
@@ -53,16 +51,16 @@
 .analogClock .minuteHand {
   width: 7px;
   height: 40%;
-  color: black;
+  background-color: rgb(95,122,97); 
   transform: translateX(-70%);
   transform: rotateZ(260deg);
 }
 
 .analogClock .hourHand {
   width: 7px;
-  height: 40%;
-  color: black;
-  transform: translateX(-70%);
+  height: 30%;
+  background-color: rgb(68,73,65);
+  transform: translateX(-65%);
   transform: rotateZ(70deg);
 }
 
@@ -74,7 +72,7 @@
   height: 15px;
   top: 50%;
   left: 50%;
-  transform: translate(-60%, -50%);
+  transform: translate(-45%, -50%);
   border-radius: 50%;
 }
 
