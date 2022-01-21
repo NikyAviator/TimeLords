@@ -3,6 +3,9 @@
   background-color: #5f7a61;
   height: 100px;
 }
+.nav-color{
+  background-color:#5f7a61 ;
+}
 
 .navbar-toggler-icon {
   color: white;

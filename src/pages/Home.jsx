@@ -1,10 +1,12 @@
 import React from 'react';
 import CityList from '../components/CityList';
+import Header from '../components/Header';
 import { Container, Row, Col, Button, Navbar, Card, Figure } from 'react-bootstrap';
 function Home() {
   return (
     <>
       <>
+<Header />
         <Container className="mt-3 px-5">
           <Row>
             <Col>
