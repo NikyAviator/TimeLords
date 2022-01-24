@@ -4,8 +4,16 @@ import {   Nav,Navbar,Offcanvas, Container } from 'react-bootstrap';
 export default function Header() {
   return (
     <Navbar bg="light" expand={false}>
-  <Container fluid>
-    <Navbar.Brand href="#">TimeLords</Navbar.Brand>
+      <Container fluid>
+        <Navbar.Brand href="/">
+        <img
+        src="images/Logo.svg"
+        width="200"
+        height="60"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+      />
+    </Navbar.Brand>
     <Navbar.Toggle aria-controls="offcanvasNavbar" />
     <Navbar.Offcanvas
       id="offcanvasNavbar"
