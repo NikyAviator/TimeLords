@@ -13,11 +13,12 @@ function Detail() {
 
   useEffect(() => {
     if (city_name != ' ') {
-      async function getTimeZoneInfo() { //Sometimes the program throw an error about Failed to fetch even the api adress is correct
-        //I am trying to fix what makes this error
+      async function getTimeZoneInfo() {
         setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${city_name}`)).json());
       }
-      getTimeZoneInfo();
+      getTimeZoneInfo().catch((ERR_CONNECTION_RESET) => {
+        getTimeZoneInfo(ERR_CONNECTION_RESET);
+      });
     }
   }, []);
 

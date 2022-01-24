@@ -5,13 +5,15 @@
   background-color: #5f7a61;
   height: 100px;
 }
+/*CSS for Header_2 */
 .nav-color{
   background-color:#5f7a61 ;
 }
-
+/*-----------------*/
 .navbar-toggler-icon {
   color: white;
 }
+/*CSS for sticky footer */
 .body {
     display: flex;
     min-height: 100vh;
@@ -20,6 +22,7 @@
 .main {
     flex: 1;
 }
+/*----------------------*/
 
 /* CSS for the analog clock */
 
