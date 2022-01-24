@@ -12,6 +12,14 @@
 .navbar-toggler-icon {
   color: white;
 }
+.body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.main {
+    flex: 1;
+}
 
 /* CSS for the analog clock */
 

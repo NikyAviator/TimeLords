@@ -4,9 +4,9 @@ import Detail from '../components/Detail';
 function Timezone() {
   return (
     <>
-    <>{ /*Header_2 är för de andra sidorna fö utom hemsidan*/ }</>
-    <Header_2/>
-      <Detail />
+      <>{ /*Header_2 är för de andra sidorna fö utom hemsidan*/}</>
+      <div className='header'><Header_2 /></div>
+      <div className='main'><Detail /></div>
     </>
   );
 }

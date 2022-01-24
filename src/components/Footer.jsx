@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-white text-center fixed-bottom ' style={{ backgroundColor: '#444941' }}>
+    <MDBFooter className='text-white text-center ' style={{ backgroundColor: '#444941' }}>
       <MDBContainer className='pt-4'>
         <section className='mb-4'>
           <a

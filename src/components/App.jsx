@@ -12,9 +12,9 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 
 function App() {
-  return (
+  return (<div className="body">
     <BrowserRouter>
-     
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/timezone-info" element={<Timezone />} />
@@ -24,6 +24,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+  </div>
   );
 }
 
