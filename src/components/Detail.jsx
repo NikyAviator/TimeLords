@@ -29,9 +29,7 @@ function Detail() {
 
   if (city_name != ' ' && timeZoneInfo != undefined) {
     return <>
-      <h1>{timezone}</h1>
       <DynamicTime {...{ timeZoneInfo }} />
-      <h1>{datetime}</h1>
     </>
   }
 }
