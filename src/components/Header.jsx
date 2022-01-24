@@ -1,11 +1,37 @@
 import React from "react";
-import { Container, Row, Col, Button, Navbar, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {   Nav,Navbar,NavbarBrand, NavbarToggler, NavItem, NavLink, Collapse, Button } from 'reactstrap';
 export default function Header() {
   return (
-    <Navbar expand="lg" variant="light" bg="light">
-      <Container>
-        <Navbar.Brand href="/">TimeLords</Navbar.Brand>
-      </Container>
-    </Navbar>
+    <div>
+  <Navbar
+    color="faded"
+    light>
+    <NavbarBrand
+      className="me-auto"
+      href="/"
+    >
+      TimeLords
+    </NavbarBrand>
+    <NavbarToggler
+      className="me-2"
+      onClick={function noRefCheck(){}}
+    />
+    <Collapse navbar>
+      <Nav navbar>
+        <NavItem>
+          <NavLink href="/components/">
+            Components
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="https://github.com/reactstrap/reactstrap">
+            GitHub
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+</div>
   );
 }
