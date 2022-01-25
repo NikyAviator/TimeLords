@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap'
+import store from './localStore'
 
 const DetailCities = (props) => {
-  let { cities, setCities, city, setCity } = props
+  let { cities, setCities, timeZoneInfo, setTimeZoneInfo } = props
 
   const [start, setStart] = useState(0)
-
 
   function add() {
     let index = start + 1 < cities.length ? start + 1 : 0
@@ -17,6 +17,12 @@ const DetailCities = (props) => {
     let index = start - 1 > 0 ? start - 1 : cities.length
     console.log(index)
     setStart(index)
+  }
+
+  async function handleClick(e) {
+    store.city = cities[e.target.id].city_name
+    store.save()
+    setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${store.city}`)).json());
   }
 
   const ToDisplay = (props) => {
@@ -42,8 +48,7 @@ const DetailCities = (props) => {
               <Card key={index}>
                 <Card.Header></Card.Header>
                 <Card.Body>
-                  <Card.Text>{city.city_name.split('/').map(name => name.replace('_', ' ')).join(', ')}</Card.Text>
-                  <Button>Hello</Button>
+                  <Button id={index} onClick={handleClick}>{city.city_name.split('/').map(name => name.replace('_', ' ')).join(', ')}</Button>
                 </Card.Body>
               </Card>
             )
