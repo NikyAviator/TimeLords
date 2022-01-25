@@ -9,10 +9,11 @@
 .nav-color{
   background-color:#5f7a61 ;
 }
-/*-----------------*/
-.navbar-toggler-icon {
-  color: white;
+/*Hamburger icon for mainpage*/
+.navbar-light .navbar-toggler-icon {
+    background-image: url(./images/list.svg) !important
 }
+
 /*CSS for sticky footer */
 .body {
     display: flex;
