@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Row, Col, Button, Card } from 'react-bootstrap'
 
 const DetailCities = (props) => {
-  let { cities, setCities } = props
+  let { cities, setCities, city, setCity } = props
 
   const [start, setStart] = useState(0)
 

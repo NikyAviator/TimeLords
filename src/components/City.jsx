@@ -26,13 +26,11 @@ function City(props) {
         <Card.Img variant="top"
           src={`https://source.unsplash.com/random/640x360/?${city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}`} />
         <Card.Body>
-          <Link to="/timezone-info"
-
-          >
+          <Link to="/timezone-info">
             <Button variant="light" className="city" onClick={saveCity}>
-              {city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}</Button></Link>
-
-
+              {city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
     </Col>
