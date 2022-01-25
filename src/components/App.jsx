@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Home from '../pages/Home';
-import Favorites from '../pages/Favorites';
+import MyCities from '../pages/MyCities';
 import Sandbox from '../pages/Sandbox';
 import Detail from '../pages/Detail';
 
@@ -19,7 +19,7 @@ function App() { // LIKE A SOMEBODY
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/timezone-info" element={<Detail />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/MyCities" element={<MyCities />} />
         <Route path="/sandbox/:name" element={<Sandbox />} />
 
       </Routes>

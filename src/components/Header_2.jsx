@@ -17,10 +17,7 @@ export default function Header_2() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Nav >
         <Nav.Link href="/">Home</Nav.Link>
-        <>{ /*about sida vi har inte skafat än vi kan länka den när den ska skafat*/ }</>
-        <Nav.Link href="/">About</Nav.Link> 
-        <Nav.Link href="/">Bigest Cites</Nav.Link>
-        <Nav.Link href="/favorites">My Cities</Nav.Link>
+        <Nav.Link href="/MyCities">My Cities</Nav.Link>
       </Nav>
     </Container>
 

@@ -26,8 +26,7 @@ export default function Header() {
       <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/favorites">Favorites</Nav.Link>
-          <Nav.Link href="/biggest-cities">Biggest Cities</Nav.Link>
+          <Nav.Link href="/MyCities">My Cities</Nav.Link>
         </Nav>
         
       </Offcanvas.Body>
