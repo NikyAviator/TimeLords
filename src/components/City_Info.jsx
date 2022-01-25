@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import DynamicTime from './DynamicTime'
+import DetailCities from './DetailCities'
 
 
 function CityInfo() {
@@ -9,9 +10,10 @@ function CityInfo() {
   const { city_name } = location.state; //Get the passed variable
 
   const [timeZoneInfo, setTimeZoneInfo] = useState([]);
+  const [cities, setCities] = useState([])
 
 
-  useEffect(() => {
+  useEffect(async () => {
     if (city_name != ' ') {
       async function getTimeZoneInfo() {
         setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${city_name}`)).json());
@@ -19,6 +21,7 @@ function CityInfo() {
 
       getTimeZoneInfo();
     }
+    await setCities(await (await fetch('/json/cities.json')).json())
   }, []);
 
   let { timezone, datetime } = timeZoneInfo; //These information is from worldtimeapi.org
@@ -30,6 +33,7 @@ function CityInfo() {
   if (city_name != ' ' && timeZoneInfo != undefined) {
     return <>
       <DynamicTime {...{ timeZoneInfo }} />
+      <DetailCities {...{ cities, setCities }} />
     </>
   }
 }
