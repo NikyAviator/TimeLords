@@ -21,8 +21,8 @@ function Home() {
         <Container className="pt-2">
           <h3>Biggest Cities:</h3>
         </Container>
-        < Container className="mt-3 px-5 ">
-          <Row xs={2} md={4} lg={6}>
+        < Container className="mt-3 px-5 text-center">
+          <Row xs={2} md={4} lg={4}>
             <CityList />
           </Row>
         </Container>

@@ -10,6 +10,10 @@
 .nav-color{
   background-color:#5f7a61 ;
 }
+.cityCards{
+  margin: 2% 2% 2% 2%;
+}
+
 /*Hamburger icon for mainpage*/
 .navbar-light .navbar-toggler-icon {
     background-image: url(./images/list.svg) !important

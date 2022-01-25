@@ -15,16 +15,15 @@ function City(props) {
     store.save();
   }
 
-
-
   //Set each city and the name of it 
   return <>
 
-    <Col xs={5} md={4}>
-      <Card>
+    <Col xs={2} md={4}>
+      <Card className='cityCards'>
         <>{ /* Link to Unsplash and generate random picture that matches the city */}</>
         <Card.Img variant="top"
-          src={`https://source.unsplash.com/random/640x360/?${city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}`} />
+          src={`https://source.unsplash.com/random/640x360/?${city_name.substring(city_name.indexOf("/") + 1)
+            .replace('_', ' ')}-downtown`} />
         <Card.Body>
           <Link to="/timezone-info">
             <Button variant="light" className="city" onClick={saveCity}>
