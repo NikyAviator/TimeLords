@@ -10,8 +10,9 @@ import Detail from '../pages/Detail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
+// SUP!
 
-function App() {
+function App() { // LIKE A SOMEBODY
   return (<div className="body">
     <BrowserRouter>
 
