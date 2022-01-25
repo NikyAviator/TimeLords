@@ -1,26 +1,18 @@
 
 import { useEffect, useState } from 'react';
 import DynamicTime from './DynamicTime'
-<<<<<<< HEAD
 import DetailCities from './DetailCities'
-=======
 import store from './localStore';
->>>>>>> af87cdb5c9d769440d509057dc00b8277c9f8189
 
 
 function CityInfo() {
 
   const [timeZoneInfo, setTimeZoneInfo] = useState([]);
-<<<<<<< HEAD
   const [cities, setCities] = useState([])
 
 
   useEffect(async () => {
-    if (city_name != ' ') {
-=======
-  useEffect(() => {
     if (store.city != ' ') {
->>>>>>> af87cdb5c9d769440d509057dc00b8277c9f8189
       async function getTimeZoneInfo() {
         setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${store.city}`)).json());
       }
