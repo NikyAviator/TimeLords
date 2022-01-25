@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import DynamicTime from './DynamicTime'
 
 
-function Detail() {
+function CityInfo() {
   const location = useLocation();
   const { city_name } = location.state; //Get the passed variable
 
@@ -16,9 +16,8 @@ function Detail() {
       async function getTimeZoneInfo() {
         setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${city_name}`)).json());
       }
-      getTimeZoneInfo().catch((ERR_CONNECTION_RESET) => {
-        getTimeZoneInfo(ERR_CONNECTION_RESET);
-      });
+
+      getTimeZoneInfo();
     }
   }, []);
 
@@ -34,4 +33,4 @@ function Detail() {
     </>
   }
 }
-export default Detail;
+export default CityInfo;
