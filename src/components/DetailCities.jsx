@@ -48,7 +48,7 @@ const DetailCities = (props) => {
               <Card key={index}>
                 <Card.Header></Card.Header>
                 <Card.Body>
-                  <Button id={index} onClick={handleClick}>{city.city_name.split('/').map(name => name.replace('_', ' ')).join(', ')}</Button>
+                  <Button id={cities.indexOf(city)} onClick={handleClick}>{city.city_name.split('/').map(name => name.replace('_', ' ')).join(', ')}</Button>
                 </Card.Body>
               </Card>
             )
@@ -61,7 +61,7 @@ const DetailCities = (props) => {
   return (
     <Container fluid>
       <Row>
-        <Col className="detail-cities">
+        <Col className="detailed">
           <Button onClick={subtract}>{'<'}</Button>
           <ToDisplay {...{ cities }} />
           <Button onClick={add}>{'>'}</Button>
