@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import AnalogClock from './AnalogClock'
-import { Button } from 'react-bootstrap'
+import { Button ,Container ,Row} from 'react-bootstrap'
+ 
 
 const DynamicTime = (props) => {
   let { timeZoneInfo } = props
@@ -42,15 +43,21 @@ const DynamicTime = (props) => {
   }
 
   return (
-    <>
-      <TimeZone />
-      <h1 >{isToggle ? timeString : <AnalogClock />}</h1>
+    <Container className= "text-center">
+     <Row>
+    <Col> 
+     <TimeZone />
+      <h1 >{isToggle ? timeString : <AnalogClock />}
+  </h1>
+ 
       <Button
-        size="lg"
+       size="sm"         
         variant="success"
         onClick={toggleClock}>Show Analog Clock</Button>{' '}
       <p>{dateString}</p>
-    </>
+      </Col>
+     </Row>
+    </Container>
   )
 }
 
