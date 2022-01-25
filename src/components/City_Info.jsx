@@ -5,6 +5,7 @@ import DetailCities from './DetailCities'
 import store from './localStore';
 
 
+
 function CityInfo() {
 
   const [timeZoneInfo, setTimeZoneInfo] = useState([]);

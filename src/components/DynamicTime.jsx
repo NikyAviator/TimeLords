@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import AnalogClock from './AnalogClock'
 
 const DynamicTime = (props) => {
   let { timeZoneInfo } = props
@@ -32,11 +33,17 @@ const DynamicTime = (props) => {
       </p>
     )
   }
+  const [isToggle, setToggle] = useState(false);
+
+  function toggleClock() {
+    setToggle(
+      !isToggle)
+  }
 
   return (
     <div>
       <TimeZone />
-      <p>{timeString}</p>
+      <h1 onClick={toggleClock}>{isToggle ? timeString : <AnalogClock />}</h1>
       <p>{dateString}</p>
     </div>
   )
