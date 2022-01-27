@@ -2,25 +2,25 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
-import store from './localStore';
-import useStates from '../utilities/useStates';
-
+import store from '../utilities/localStore';
+import useStates from '../utilities/useStates';//Import custom hook from utilities
+//This hook reset the DOM elements(Form.Control and Form.Select)
 const AddCityForm = () => {
   const [errors, setErrors] = useState([])
   const [options, setOptions] = useState([])
   const [city, setCity] = useState('')
   const [timeZone, setTimeZone] = useState('')
-  const [myCityList, setMyCityList] = useState([]);
+  const [myCityList, setMyCityList] = useState([]);//get a state variable myCityList
 
   useEffect(async () => {
-    //Get timezones from WorldTimeAPI
     setOptions(await (await fetch('/public/json/timezones.json')).json())
   }, [])
 
-  let emptyFormValues = {
-    myCity: '',
+  let emptyFormValues = { //set the emptyFormValues myCity and myTimezone to ''
+    myCity: '',           //myCity and myTimezone should match the DOM elements' value
     myTimezone: ''
   };
+
   const [formValues, updateFormValue] = useStates({ ...emptyFormValues });
 
   function handleSubmit(e) {
@@ -31,40 +31,36 @@ const AddCityForm = () => {
     setErrors(errors.length === 0 ? [] : errors)
     resetForm();
   }
-  let { myCity, myTimezone } = formValues;
+  let { myCity, myTimezone } = formValues;  //myCity and myTimezone should match the DOM elements' value
 
   useEffect(() => {
-    if (myCity != '' && myTimezone != '') //if myCity and myTimezone is not empty save them into myCityList
-      setMyCityList([...myCityList, formValues]) // ...myCityList is the old array, and formValues is the new city and timezone that are
-    //choosen by the user
-  }, [myCity, myTimezone]);
-
+    if (myCity != '' && myTimezone != '') {  //if myCity and myTimezone is not empty save them into myCityList
+      setMyCityList([...myCityList, formValues])
+    }// ...myCityList is the old array, and formValues is the new city and timezone that are                                              
+  }, [myCity, myTimezone]);                     //choosen by the user
 
   function handleCityInputChange(e) {
     e.preventDefault()
     setCity(e.target.value)
-    let { name, value } = e.target; //name is DOM element's name and value is the DOM element's value 
-    updateFormValue({ [name]: value });
+    let { name, value } = e.target; //name is DOM element's (Form.Control) name and value is the DOM element's value 
+    updateFormValue({ [name]: value });//save them into FormValues
   }
 
   function handleSelectTimeZoneChange(e) {
     e.preventDefault()
     setTimeZone(e.target.value)
-    let { name, value } = e.target; //name is DOM element's name and value is the DOM element's value 
-    updateFormValue({ [name]: value });
+    let { name, value } = e.target; //name is DOM element's (Form.Select) name and value is the DOM element's value 
+    updateFormValue({ [name]: value });//save them into FormValues
 
   }
   function saveCity() {
-    store.myCity = myCityList; //Save myCityList to localStore "store"
+    store.cityList = myCityList; //Save myCityList to localStore store's cityList
     store.save();
   }
-
 
   const resetForm = () => {
     updateFormValue({ ...emptyFormValues }); //empthFormValues and there is custom useStates hook is used here
   };
-  console.log(myCityList)
-  console.log(store.myCity)
 
   return (
     <>

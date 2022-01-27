@@ -1,7 +1,7 @@
 import React from 'react';
 import Header_2 from '../components/Header_2';
 import AddCityForm from '../components/AddCityForm';
-import store from '../components/localStore';
+import store from '../utilities/localStore'
 import { Button, Card, Row } from 'react-bootstrap'
 
 function MyCities() {
