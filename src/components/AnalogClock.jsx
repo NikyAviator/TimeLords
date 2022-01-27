@@ -22,8 +22,11 @@ export default class AnalogClock extends Component {
 
   render() {
     return (
-      <div className="analogClockBody">
-        <div className="analogClock">
+      <div className="analogClockBody"> <>{ /* Added padding for analogClock */}</>
+        <div className="analogClock" style={{
+          marginTop: "1.25%",
+          marginBottom: "1.25%"
+        }}>
           <div className="hourHand Hand"
             style={{
               transform: `translateX(-50%) rotateZ(${this.state.time.getHours() * 30}deg) `

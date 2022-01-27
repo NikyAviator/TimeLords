@@ -28,12 +28,14 @@
 .main {
     flex: 1;
 }
-/*----------------------*/
+
+/*CSS for digital-clock*/
 .digital-clock 
 {
-margin-top: 8%;
-margin-bottom: 8%;
+margin-top: 8.5%;
+margin-bottom: 8.5%;
 }
+
 /* CSS for the analog clock */
 
 .analogClockBody {
