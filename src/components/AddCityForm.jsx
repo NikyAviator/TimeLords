@@ -16,7 +16,7 @@ const AddCityForm = () => {
 
   useEffect(async () => {
     //Get timezones from WorldTimeAPI
-    setOptions(await (await fetch('http://worldtimeapi.org/api/timezone')).json())
+    setOptions(await (await fetch('/public/json/timezones.json')).json())
   }, [])
 
   function handleSubmit(e) {
@@ -37,7 +37,7 @@ const AddCityForm = () => {
   function handleSelectTimeZoneChange(e) {
     e.preventDefault()
     setTimeZone(e.target.value)
-    
+
   }
 
   function saveCity() {
@@ -48,8 +48,8 @@ const AddCityForm = () => {
       console.log(store.myCities);
     }
   }
-  
- 
+
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
