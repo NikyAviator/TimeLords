@@ -8,8 +8,13 @@ function Home() {
       <div className='header'><Header /></div>
       <div className='main'><>
         <Container className="mt-3 px-5">
-          <Figure src="images/Logo.svg" alt="Logo for TimeLords">
-            <Figure.Image src='images/Logo.svg' />
+          <Figure alt="Logo for TimeLords" style={{
+            marginLeft: "6%",
+            marginTop: "2%"
+          }}>
+            <Figure.Image
+              src='images/Logo.svg'
+            />
           </Figure>
         </Container>
         <Container className="pt-5">

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 @import url('css/time_zone_info.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
 /* Testar så att style.css är korrekt implementerad/länkad */
 .navbar-green {
   background-color: #5f7a61;
@@ -14,7 +13,6 @@
 .cityCards{
   margin: 2% 2% 2% 2%;
 }
-
 /*Hamburger icon for mainpage*/
 .navbar-light .navbar-toggler-icon {
     background-image: url(./images/list.svg) !important
@@ -22,7 +20,7 @@
 
 /*CSS for sticky footer */
 .body {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Outfit', sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
