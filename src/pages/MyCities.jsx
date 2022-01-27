@@ -1,19 +1,29 @@
 import React from 'react';
 import Header_2 from '../components/Header_2';
 import AddCityForm from '../components/AddCityForm';
-import { Container } from 'react-bootstrap';
+import store from '../components/localStore';
+import { Button, Card, Row } from 'react-bootstrap'
+
 function MyCities() {
   return (
     <>
-      
-    <div className='body'>
-      <Header_2 />
-      <Container >
+      <div className='header'><Header_2 /></div>
+      <div className='main'>
         <AddCityForm />
-      </Container>
-      <h1>My Cities</h1>
-        </div>
-        
+        <h1>My Cities</h1>
+        <Row xs={2} md={4} lg={6}>
+
+          {store.myCity.map(({ myCity }) => (
+            <Card
+              className='myCityCards'>
+              <Card.Img variant="top"
+                src={`https://source.unsplash.com/random/640x360/?${myCity}-downtown`} />
+              <Button variant="light" className="city">
+                {myCity}
+              </Button>
+            </Card>))}
+        </Row>
+      </div>
     </>
   );
 }
