@@ -6,6 +6,17 @@ const DetailCities = (props) => {
   let { cities, setCities, timeZoneInfo, setTimeZoneInfo } = props
 
   const [start, setStart] = useState(0)
+  const [numberToRender, setNumberToRender] = useState(0)
+
+  useEffect(() => {
+    function handleResize() {
+      let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      let numberToRender = Math.floor(windowWidth / 200) - 1;
+      numberToRender = numberToRender === 0 ? 1 : numberToRender
+      setNumberToRender(numberToRender)
+    }
+    window.addEventListener('resize', handleResize)
+  })
 
   function add() {
     let index = start + 1 < cities.length ? start + 1 : 0
@@ -26,7 +37,10 @@ const DetailCities = (props) => {
   }
 
   const ToDisplay = (props) => {
-    let numberToRender = Math.floor(window.screen.width / 200) - 1
+    let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let toRender = Math.floor(windowWidth / 200) - 1;
+    toRender = toRender === 0 ? 1 : toRender
+    setNumberToRender(numberToRender)
     console.log(numberToRender)
     let { cities } = props
     let display = []
