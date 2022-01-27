@@ -5,7 +5,6 @@ import { Container, Row, Col, Button, Navbar, Card, Figure } from 'react-bootstr
 function Home() {
   return (
     <>
-
       <div className='header'><Header /></div>
       <div className='main'><>
         <Container className="mt-3 px-5">
@@ -18,15 +17,6 @@ function Home() {
             </Col>
           </Row>
         </Container>
-        <Container className="pt-2">
-          <h3>Biggest Cities:</h3>
-        </Container>
-        < Container className="mt-3 px-5 text-center">
-          <Row xs={2} md={4} lg={4}>
-            <CityList />
-          </Row>
-        </Container>
-      </>
         <Container className="pt-5">
           <h3>My Cities:</h3>
         </Container>
@@ -73,6 +63,15 @@ function Home() {
             </Col>
           </Row>
         </Container>
+        <Container className="pt-2">
+          <h3>Biggest Cities:</h3>
+        </Container>
+        < Container className="mt-3 px-5 text-center">
+          <Row xs={2} md={4} lg={4}>
+            <CityList />
+          </Row>
+        </Container>
+      </>
       </div>
     </>
   );
