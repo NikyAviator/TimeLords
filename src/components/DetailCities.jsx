@@ -40,8 +40,7 @@ const DetailCities = (props) => {
     let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let toRender = Math.floor(windowWidth / 200) - 1;
     toRender = toRender === 0 ? 1 : toRender
-    setNumberToRender(numberToRender)
-    console.log(numberToRender)
+    setNumberToRender(toRender)
     let { cities } = props
     let display = []
     if (cities.length > 0) {
@@ -51,7 +50,7 @@ const DetailCities = (props) => {
         if (index + 1 < cities.length) {
           index++
         } else {
-          0
+          index = 0
         }
       }
     }
@@ -80,12 +79,12 @@ const DetailCities = (props) => {
     <Container fluid>
       <Row>
         <Col className="detailed">
-          <Button id="back" onClick={subtract}>{'<'}</Button>
+          <Button id="back" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-left" onClick={subtract} /></Button>
           <ToDisplay {...{ cities }} />
-          <Button id="next" onClick={add}>{'>'}</Button>
+          <Button id="next" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-right" onClick={add} /></Button>
         </Col>
-      </Row>
-    </Container>
+      </Row >
+    </Container >
   )
 }
 
