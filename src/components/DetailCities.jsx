@@ -62,9 +62,9 @@ const DetailCities = (props) => {
     <Container fluid>
       <Row>
         <Col className="detailed">
-          <Button onClick={subtract}>{'<'}</Button>
+          <Button id="back" onClick={subtract}>{'<'}</Button>
           <ToDisplay {...{ cities }} />
-          <Button onClick={add}>{'>'}</Button>
+          <Button id="next" onClick={add}>{'>'}</Button>
         </Col>
       </Row>
     </Container>

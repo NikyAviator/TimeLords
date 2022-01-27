@@ -3,7 +3,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  background: #D5EEBB;
+  padding: 2vh;
 }
 
 .detailed .card {
@@ -32,4 +33,16 @@
   width: 128px;
   height: 32px;
   background: red;
+}
+
+.detailed #back, .detailed #next {
+  height: 100%;
+}
+
+.detailed #back {
+  margin-right: 2vh;
+}
+
+.detailed .card {
+  margin-right: 2vh;
 }

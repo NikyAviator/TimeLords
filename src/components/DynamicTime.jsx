@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import AnalogClock from './AnalogClock'
 import { Button, Container, Row, Col } from 'react-bootstrap'
-
+import AnalogClock from './AnalogClock'
+import store from './localStore'
 
 const DynamicTime = (props) => {
   let { timeZoneInfo } = props
@@ -15,11 +15,12 @@ const DynamicTime = (props) => {
       update()
     }, 1000);
     return () => clearInterval(interval)
-  }, [update])
+  }, [])
 
   function update() {
     let date = new Date()
-    let timeZone = timeZoneInfo.timezone
+    let timeZone = store.city
+    console.log(timeZone)
     setTimeZone(timeZone)
     setTimeString(date.toLocaleTimeString('sv-SE', { timeZone: timeZone }))
     setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZoneInfo.timezone }))
