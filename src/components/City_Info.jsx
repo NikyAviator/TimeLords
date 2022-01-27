@@ -13,7 +13,7 @@ function CityInfo() {
 
 
   useEffect(async () => {
-    if (store.city !== ' ') setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${store.city}`)).json());
+    setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${store.city}`)).json());
     await setCities(await (await fetch('/json/cities.json')).json())
   }, []);
 

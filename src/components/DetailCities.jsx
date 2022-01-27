@@ -26,11 +26,13 @@ const DetailCities = (props) => {
   }
 
   const ToDisplay = (props) => {
+    let numberToRender = Math.floor(window.screen.width / 200) - 1
+    console.log(numberToRender)
     let { cities } = props
     let display = []
     if (cities.length > 0) {
       let index = start < cities.length ? start : 0
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < numberToRender; i++) {
         display.push(cities[index])
         if (index + 1 < cities.length) {
           index++
@@ -45,7 +47,6 @@ const DetailCities = (props) => {
         {
           display.length > 0 && display.map((city, index) => {
             let imageLink = `https://source.unsplash.com/random/640x360/?${city.city_name.split('/')[1].replace('_', '')}-downtown`
-            console.log(imageLink)
             return (
               <Card key={index} style={{
                 backgroundImage: `url(${imageLink})`,
