@@ -11,7 +11,7 @@ function MyCities() {
       <div className='main'>
         <AddCityForm />
         <h1>My Cities</h1>
-        <Row xs={2} md={4} lg={6}>
+        {/* <Row xs={2} md={4} lg={6}>
 
           {store.myCity.map(({ myCity }) => (
             <Card
@@ -22,7 +22,7 @@ function MyCities() {
                 {myCity}
               </Button>
             </Card>))}
-        </Row>
+      </Row> */}
       </div>
     </>
   );

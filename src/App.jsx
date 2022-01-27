@@ -1,11 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Home from '../pages/Home';
-import MyCities from '../pages/MyCities';
-import Sandbox from '../pages/Sandbox';
-import Detail from '../pages/Detail';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import MyCities from './pages/MyCities';
+import Clock from './pages/Clock';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
@@ -18,10 +16,8 @@ function App() { // LIKE A SOMEBODY
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/timezone-info" element={<Detail />} />
-        <Route path="/MyCities" element={<MyCities />} />
-        <Route path="/sandbox/:name" element={<Sandbox />} />
-
+        <Route path="/clock" element={<Clock />} />
+        <Route path="/my_cities" element={<MyCities />} />
       </Routes>
       <Footer />
     </BrowserRouter>

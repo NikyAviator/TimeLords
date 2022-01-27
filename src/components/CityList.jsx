@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import City from './City';
+import CityCards from './CityCards';
 import { Row } from 'react-bootstrap';
 
 
@@ -15,7 +15,7 @@ function CityList() {
 
   //Loop through cities 
   return <>
-    {cities.map(city => <City key={city.id}{...{ city }} />)}
+    {cities.map(city => <CityCards key={city.id}{...{ city }} />)}
   </>
 }
 export default CityList;

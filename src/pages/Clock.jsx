@@ -1,7 +1,7 @@
 import React from 'react';
 import Header_2 from '../components/Header_2';
 import City_Info from '../components/City_Info';
-function Detail() {
+function Clock() {
   return (
     <>
       <>{ /*Header_2 är för de andra sidorna fö utom hemsidan*/}</>
@@ -11,4 +11,4 @@ function Detail() {
   );
 }
 
-export default Detail;
+export default Clock;
