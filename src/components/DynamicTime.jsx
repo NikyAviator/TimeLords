@@ -27,12 +27,12 @@ const DynamicTime = (props) => {
 
   const TimeZone = function timeZoneAsString() {
     return (
-      <p>
+      <h3 style={{paddingTop:"1%"}}>
         The time in{' '}
         <b>
           {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}
         </b>
-      </p>
+      </h3>
     )
   }
   const [isToggle, setToggle] = useState(true);
@@ -44,16 +44,16 @@ const DynamicTime = (props) => {
   }
 
   return (
-    <Container className="text-center">
+    <Container className="text-center" style={{backgroundImage:`https://source.unsplash.com/random/640x360/?${store.city}-downtown`}}>
       <Row>
         <Col>
           <TimeZone />
-          <h1 >{isToggle ? timeString : <AnalogClock />}
+          <h1 className="digital-clock" style ={{fontSize:"100px"}}>{isToggle ? timeString : <AnalogClock />}
           </h1>
           <Button
             variant="success"
             onClick={toggleClock}>{isToggle ? 'Show Analog Clock' : 'Show Digital Clock'}</Button>
-          <p>{dateString}</p>
+          <h3 style={{paddingBottom:"1%" , paddingTop:"1%"}}>{dateString}</h3>
         </Col>
       </Row>
     </Container>

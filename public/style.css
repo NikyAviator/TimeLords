@@ -29,7 +29,11 @@
     flex: 1;
 }
 /*----------------------*/
-
+.digital-clock 
+{
+margin-top: 8%;
+margin-bottom: 8%;
+}
 /* CSS for the analog clock */
 
 .analogClockBody {
