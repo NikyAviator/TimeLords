@@ -6,6 +6,7 @@ catch (e) {
   store = {};
 }
 
+store.clear = () => localStorage.store = localStorage.clear();
 store.save = () => localStorage.store = JSON.stringify(store);
 
 export default store;

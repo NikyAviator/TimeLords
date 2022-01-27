@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import AnalogClock from './AnalogClock'
-import store from './localStore'
+import store from '../utilities/localStore'
 
 const DynamicTime = (props) => {
   let { timeZoneInfo } = props

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap'
-import store from './localStore'
+import store from '../utilities/localStore'
 
 const DetailCities = (props) => {
   let { cities, setCities, timeZoneInfo, setTimeZoneInfo } = props

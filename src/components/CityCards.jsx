@@ -1,7 +1,7 @@
 
 import { Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import store from './localStore';
+import store from '../utilities/localStore'
 
 function CityCards(props) {
   let { city } = props;
