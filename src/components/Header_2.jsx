@@ -15,10 +15,12 @@ export default function Header_2() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
         <Nav >
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/my_cities">My Cities</Nav.Link>
         </Nav>
+        </Navbar.Collapse>
       </Container>
 
 

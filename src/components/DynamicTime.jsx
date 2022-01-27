@@ -27,12 +27,14 @@ const DynamicTime = (props) => {
 
   const TimeZone = function timeZoneAsString() {
     return (
+      
       <h3 style={{paddingTop:"1%"}}>
         The time in{' '}
         <b>
           {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}
         </b>
       </h3>
+      
     )
   }
   const [isToggle, setToggle] = useState(true);
@@ -44,7 +46,7 @@ const DynamicTime = (props) => {
   }
 
   return (
-    <Container className="text-center" style={{backgroundImage:`https://source.unsplash.com/random/640x360/?${store.city}-downtown`}}>
+    <Container className="text-center">
       <Row>
         <Col>
           <TimeZone />

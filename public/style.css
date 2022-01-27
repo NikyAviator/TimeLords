@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 @import url('css/time_zone_info.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 /* Testar så att style.css är korrekt implementerad/länkad */
 .navbar-green {
@@ -21,6 +22,7 @@
 
 /*CSS for sticky footer */
 .body {
+  font-family: 'Roboto', sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
