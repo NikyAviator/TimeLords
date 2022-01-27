@@ -9,13 +9,18 @@ const DetailCities = (props) => {
   const [numberToRender, setNumberToRender] = useState(0)
 
   useEffect(() => {
-    function handleResize() {
+    function getNumberToRender() {
       let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       let numberToRender = Math.floor(windowWidth / 200) - 1;
       numberToRender = numberToRender === 0 ? 1 : numberToRender
       setNumberToRender(numberToRender)
     }
+
+    function handleResize() { getNumberToRender() }
+
     window.addEventListener('resize', handleResize)
+
+    getNumberToRender();
   })
 
   function add() {
@@ -37,11 +42,8 @@ const DetailCities = (props) => {
   }
 
   const ToDisplay = (props) => {
-    let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let toRender = Math.floor(windowWidth / 200) - 1;
-    toRender = toRender === 0 ? 1 : toRender
-    setNumberToRender(toRender)
-    let { cities } = props
+    let { cities, numberToRender, setNumberToRender } = props
+
     let display = []
     if (cities.length > 0) {
       let index = start < cities.length ? start : 0
@@ -80,7 +82,7 @@ const DetailCities = (props) => {
       <Row>
         <Col className="detailed">
           <Button id="back" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-left" onClick={subtract} /></Button>
-          <ToDisplay {...{ cities }} />
+          <ToDisplay {...{ cities, numberToRender, setNumberToRender }} />
           <Button id="next" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-right" onClick={add} /></Button>
         </Col>
       </Row >
