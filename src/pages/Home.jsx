@@ -8,14 +8,9 @@ function Home() {
       <div className='header'><Header /></div>
       <div className='main'><>
         <Container className="mt-3 px-5">
-          <Row>
-            <Col>
-              <Figure src="images/Logo.svg" alt="Logo for TimeLords">
-                <Figure.Image
-                  src='images/Logo.svg' /> <>{/* Logo is responsive now */}</>
-              </Figure>
-            </Col>
-          </Row>
+          <Figure src="images/Logo.svg" alt="Logo for TimeLords">
+            <Figure.Image src='images/Logo.svg' />
+          </Figure>
         </Container>
         <Container className="pt-5">
           <h3>My Cities:</h3>
