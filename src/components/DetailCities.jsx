@@ -20,9 +20,9 @@ const DetailCities = (props) => {
   }
 
   async function handleClick(e) {
+    e.preventDefault()
     store.city = cities[e.target.id].city_name
     store.save()
-    setTimeZoneInfo(await (await fetch(`http://worldtimeapi.org/api/timezone/${store.city}`)).json());
   }
 
   const ToDisplay = (props) => {
@@ -44,12 +44,15 @@ const DetailCities = (props) => {
       <>
         {
           display.length > 0 && display.map((city, index) => {
+            let imageLink = `https://source.unsplash.com/random/640x360/?${city.city_name.split('/')[1].replace('_', '')}-downtown`
+            console.log(imageLink)
             return (
-              <Card key={index}>
-                <Card.Header></Card.Header>
-                <Card.Body>
-                  <Button id={cities.indexOf(city)} onClick={handleClick}>{city.city_name.split('/').map(name => name.replace('_', ' ')).join(', ')}</Button>
-                </Card.Body>
+              <Card key={index} style={{
+                backgroundImage: `url(${imageLink})`,
+                backgroundSize: 'auto 100%',
+
+              }}>
+                <Button id={cities.indexOf(city)} onClick={handleClick}>{city.city_name.split('/')[1].replace('_', ' ')}</Button>
               </Card>
             )
           })
