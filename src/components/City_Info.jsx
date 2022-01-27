@@ -26,7 +26,7 @@ function CityInfo() {
   if (store.city != ' ' && timeZoneInfo != undefined) {
     return <>
       <DynamicTime {...{ timeZoneInfo }} />
-      <DetailCities {...{ cities, setCities, timeZoneInfo, setTimeZoneInfo }} />
+      {cities && <DetailCities {...{ cities, setCities, timeZoneInfo, setTimeZoneInfo }} />}
     </>
   }
 }
