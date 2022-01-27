@@ -63,12 +63,12 @@ const DetailCities = (props) => {
           display.length > 0 && display.map((city, index) => {
             let imageLink = `https://source.unsplash.com/random/640x360/?${city.city_name.split('/')[1].replace('_', '')}-downtown`
             return (
-              <Card key={index} style={{
+              <Card key={index} id={cities.indexOf(city)} onClick={handleClick} style={{
                 backgroundImage: `url(${imageLink})`,
                 backgroundSize: 'auto 100%',
-
+                cursor: 'pointer'
               }}>
-                <Button id={cities.indexOf(city)} onClick={handleClick}>{city.city_name.split('/')[1].replace('_', ' ')}</Button>
+                <Button>{city.city_name.split('/')[1].replace('_', ' ')}</Button>
               </Card>
             )
           })
