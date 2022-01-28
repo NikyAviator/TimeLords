@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Button, Navbar, Card, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 export default function Header_2() {
   return (
     <Navbar className="nav-color" expand="lg">

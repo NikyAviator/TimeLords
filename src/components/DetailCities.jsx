@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap'
+import { Container, Row, Col, Button, Card } from 'react-bootstrap'
 import store from '../utilities/localStore'
 
 const DetailCities = (props) => {
@@ -63,6 +63,7 @@ const DetailCities = (props) => {
           display.length > 0 && display.map((city, index) => {
             let imageLink = `https://source.unsplash.com/random/640x360/?${city.city_name.split('/')[1].replace('_', '')}-downtown`
             return (
+              
               <Card key={index} id={cities.indexOf(city)} onClick={handleClick} style={{
                 backgroundImage: `url(${imageLink})`,
                 backgroundSize: 'auto 100%',
@@ -70,6 +71,7 @@ const DetailCities = (props) => {
               }}>
                 <Button>{city.city_name.split('/')[1].replace('_', ' ')}</Button>
               </Card>
+              
             )
           })
         }
@@ -78,7 +80,7 @@ const DetailCities = (props) => {
   }
 
   return (
-    <Container fluid>
+    <Container fluid  style={{marginBottom:"4%"}}>
       <Row>
         <Col className="detailed">
           <Button id="back" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-left" onClick={subtract} /></Button>
