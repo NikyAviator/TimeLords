@@ -6,6 +6,17 @@
   background-color: #5f7a61;
   height: 100px;
 }
+.btn-custom{
+  background-color: #7FC8A9 !important ;
+  
+}
+.MyCities_Form
+{
+  margin-top: 3%;
+  margin-right: 8%;
+  margin-left: 8%;
+  margin-bottom: 2%;
+}
 /*CSS for Header_2 */
 .nav-color{
   background-color:#5f7a61 ;

@@ -53,7 +53,7 @@ const DynamicTime = (props) => {
           {isToggle ? <h1 className="digital-clock" style={{ fontSize: "100px" }}> {timeString} </h1> : <AnalogClock />}
 
           <Button
-            variant="success"
+            variant="custom"
             onClick={toggleClock}>{isToggle ? 'Show Analog Clock' : 'Show Digital Clock'}</Button>
           <h3 style={{ paddingBottom: "1%", paddingTop: "1%" }}>{dateString}</h3>
         </Col>

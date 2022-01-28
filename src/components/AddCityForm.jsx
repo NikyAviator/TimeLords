@@ -64,6 +64,7 @@ const AddCityForm = () => {
 
   return (
     <>
+    <div className="MyCities_Form">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>City Name</Form.Label>
@@ -86,11 +87,12 @@ const AddCityForm = () => {
             Pick the correct time zone for your city
           </Form.Text>
         </Form.Group>
-        <Button onClick={saveCity} variant="primary" type="sumbit" className="mb-3">Add City</Button>
+        <Button onClick={saveCity} variant="custom" type="sumbit" className="mb-3" >Add City</Button>
       </Form>
       {errors.map((error, index) => {
         return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
       })}
+      </div>
     </>
   )
 }

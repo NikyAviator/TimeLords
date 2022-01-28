@@ -63,7 +63,7 @@ function Home() {
             </Col>
           </Row>
         </Container>
-        <Container className="pt-2">
+        <Container className="pt-2" style= {{marginTop :"4%"}}>
           <h3>Biggest Cities:</h3>
         </Container>
         < Container className="mt-3 px-5 text-center">

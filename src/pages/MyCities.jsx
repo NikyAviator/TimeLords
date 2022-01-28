@@ -1,5 +1,5 @@
 import React from 'react';
-import Header_2 from '../components/Header_2';
+import Header_3 from '../components/Header_3';
 import AddCityForm from '../components/AddCityForm';
 import store from '../utilities/localStore'
 import { Button, Card, Row } from 'react-bootstrap'
@@ -7,10 +7,10 @@ import { Button, Card, Row } from 'react-bootstrap'
 function MyCities() {
   return (
     <>
-      <div className='header'><Header_2 /></div>
+      <div className='header'><Header_3 /></div>
       <div className='main'>
         <AddCityForm />
-        <h1>My Cities</h1>
+        <h1 style={{marginLeft: "8%", marginRight:"8%"}}>My Cities</h1>
         {/* <Row xs={2} md={4} lg={6}>
 
           {store.myCity.map(({ myCity }) => (
