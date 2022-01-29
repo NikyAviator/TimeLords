@@ -17,7 +17,7 @@ function Home() {
             />
           </Figure>
         </Container>
-        <Container className="pt-5">
+        <Container >
           <h3>My Cities:</h3>
         </Container>
         <Container className="mt-3 px-5">
@@ -63,10 +63,10 @@ function Home() {
             </Col>
           </Row>
         </Container>
-        <Container className="pt-2" style= {{marginTop :"4%"}}>
+        <Container className="pt-2" style={{ marginTop: "4%" }}>
           <h3>Biggest Cities:</h3>
         </Container>
-        < Container className="mt-3 px-5 text-center" style={{marginBottom: "4%"}}>
+        < Container className="mt-3 px-5 text-center" style={{ marginBottom: "4%" }}>
           <Row xs={2} md={4} lg={4}>
             <CityList />
           </Row>

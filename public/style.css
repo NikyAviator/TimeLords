@@ -41,10 +41,13 @@
 }
 
 /*CSS for digital-clock*/
-.digital-clock 
-{
-margin-top: 8.5%;
-margin-bottom: 8.5%;
+.digital-clock {
+margin-top: 7.8%;
+margin-bottom: 7.8%;
+}
+@media screen and (max-width:360px) {
+       .digital-clock{ margin:33%;
+      }
 }
 
 /* CSS for the analog clock */

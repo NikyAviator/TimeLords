@@ -18,7 +18,7 @@ function CityCards(props) {
   //Set each city and the name of it 
   return <>
 
-    <Col xs={6} md={4}>
+    <Col xs={12} md={4}>
       <Card className='cityCards'>
         <>{ /* Link to Unsplash and generate random picture that matches the city */}</>
         <Card.Img variant="top"

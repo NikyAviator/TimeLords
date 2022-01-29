@@ -50,7 +50,7 @@ const DynamicTime = (props) => {
       <Row>
         <Col>
           <TimeZone />
-          {isToggle ? <h1 className="digital-clock" style={{ fontSize: "100px" }}> {timeString} </h1> : <AnalogClock />}
+          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw" }}> {timeString} </h3> : <AnalogClock />}
 
           <Button
             variant="custom"
