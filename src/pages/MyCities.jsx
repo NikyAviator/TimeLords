@@ -10,10 +10,10 @@ function MyCities() {
       <div className='header'><Header_3 /></div>
       <div className='main'>
         <AddCityForm />
-        <h1 style={{marginLeft: "8%", marginRight:"8%"}}>My Cities</h1>
-        {/* <Row xs={2} md={4} lg={6}>
+        <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
+        {<Row xs={2} md={4} lg={6}>
 
-          {store.myCity.map(({ myCity }) => (
+          {store.cityList.map(({ myCity }) => (
             <Card
               className='myCityCards'>
               <Card.Img variant="top"
@@ -22,7 +22,7 @@ function MyCities() {
                 {myCity}
               </Button>
             </Card>))}
-      </Row> */}
+        </Row>}
       </div>
     </>
   );

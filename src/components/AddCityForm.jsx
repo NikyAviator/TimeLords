@@ -54,7 +54,7 @@ const AddCityForm = () => {
 
   }
   function saveCity() {
-    store.cityList = myCityList; //Save myCityList to localStore store's cityList
+    store.cityList.push(myCityList); //Save myCityList to localStore store's cityList
     store.save();
   }
 
@@ -64,34 +64,34 @@ const AddCityForm = () => {
 
   return (
     <>
-    <div className="MyCities_Form">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>City Name</Form.Label>
-          <Form.Control name="myCity" type="text" value={myCity} placeholder="City" onChange={handleCityInputChange} />
-          <Form.Text className="text-muted">
-            Enter the name of the city you would like to add
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Time Zone</Form.Label>
-          <Form.Select name="myTimezone" value={myTimezone} onChange={handleSelectTimeZoneChange}>
-            <option value="">-- Select a Time Zone --</option>
-            {
-              options.map((option, index) => {
-                return <option key={index} value={option}>{option}</option>
-              })
-            }
-          </Form.Select>
-          <Form.Text>
-            Pick the correct time zone for your city
-          </Form.Text>
-        </Form.Group>
-        <Button onClick={saveCity} variant="custom" type="sumbit" className="mb-3" >Add City</Button>
-      </Form>
-      {errors.map((error, index) => {
-        return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
-      })}
+      <div className="MyCities_Form">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>City Name</Form.Label>
+            <Form.Control name="myCity" type="text" value={myCity} placeholder="City" onChange={handleCityInputChange} />
+            <Form.Text className="text-muted">
+              Enter the name of the city you would like to add
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Time Zone</Form.Label>
+            <Form.Select name="myTimezone" value={myTimezone} onChange={handleSelectTimeZoneChange}>
+              <option value="">-- Select a Time Zone --</option>
+              {
+                options.map((option, index) => {
+                  return <option key={index} value={option}>{option}</option>
+                })
+              }
+            </Form.Select>
+            <Form.Text>
+              Pick the correct time zone for your city
+            </Form.Text>
+          </Form.Group>
+          <Button onClick={saveCity} variant="custom" type="sumbit" className="mb-3" >Add City</Button>
+        </Form>
+        {errors.map((error, index) => {
+          return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
+        })}
       </div>
     </>
   )
