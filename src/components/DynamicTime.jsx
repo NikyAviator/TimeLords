@@ -4,7 +4,6 @@ import AnalogClock from './AnalogClock'
 import store from '../utilities/localStore'
 
 const DynamicTime = (props) => {
-  let { timeZoneInfo } = props
 
   const [timeZone, setTimeZone] = useState('')
   const [timeString, setTimeString] = useState('00:00:00')
@@ -22,7 +21,7 @@ const DynamicTime = (props) => {
     let timeZone = store.city
     setTimeZone(timeZone)
     setTimeString(date.toLocaleTimeString('sv-SE', { timeZone: timeZone }))
-    setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZoneInfo.timezone }))
+    setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZone }))
   }
 
   const TimeZone = function timeZoneAsString() {
