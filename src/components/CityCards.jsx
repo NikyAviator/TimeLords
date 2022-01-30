@@ -25,7 +25,7 @@ function CityCards(props) {
           src={`https://source.unsplash.com/random/640x360/?${city_name.substring(city_name.indexOf("/") + 1)
             .replace('_', ' ')}-downtown`} />
         <Card.Body>
-          <Link to="/clock">
+          <Link to={`/${city_name.substring(city_name.indexOf("/") + 1)}`}>
             <Button variant="light" className="city" onClick={saveCity}>
               {city_name.substring(city_name.indexOf("/") + 1).replace('_', ' ')}
             </Button>

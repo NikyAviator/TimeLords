@@ -16,7 +16,7 @@ function App() { // LIKE A SOMEBODY
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/clock" element={<Clock />} />
+        <Route path="/:city" element={<Clock />} />
         <Route path="/my_cities" element={<MyCities />} />
       </Routes>
       <Footer />
