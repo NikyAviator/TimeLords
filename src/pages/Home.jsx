@@ -37,7 +37,9 @@ function Home() {
 
         </Container>
 
-        <div><CheckIfMyCitiesIsEmpty /></div>
+        <Container>
+          <CheckIfMyCitiesIsEmpty />
+        </Container>
 
         <Container className="pt-2" style={{ marginTop: "4%" }}>
           <h3>Biggest Cities:</h3>
