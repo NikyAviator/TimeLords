@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Container, Row, Col, Button, Card } from 'react-bootstrap'
 import store from '../utilities/localStore'
 
 const DetailCities = (props) => {
   let { cities, setCities, timeZoneInfo, setTimeZoneInfo } = props
+  let navigate = useNavigate()
 
   const [start, setStart] = useState(0)
   const [numberToRender, setNumberToRender] = useState(0)
@@ -39,6 +41,8 @@ const DetailCities = (props) => {
     e.preventDefault()
     store.city = cities[e.target.id].city_name
     store.save()
+    let target = store.city.split('/')[1];
+    navigate('/' + target)
   }
 
   const ToDisplay = (props) => {
@@ -63,7 +67,7 @@ const DetailCities = (props) => {
           display.length > 0 && display.map((city, index) => {
             let imageLink = `https://source.unsplash.com/random/640x360/?${city.city_name.split('/')[1].replace('_', '')}-downtown`
             return (
-              
+
               <Card key={index} id={cities.indexOf(city)} onClick={handleClick} style={{
                 backgroundImage: `url(${imageLink})`,
                 backgroundSize: 'auto 100%',
@@ -71,7 +75,7 @@ const DetailCities = (props) => {
               }}>
                 <Button>{city.city_name.split('/')[1].replace('_', ' ')}</Button>
               </Card>
-              
+
             )
           })
         }
@@ -80,7 +84,7 @@ const DetailCities = (props) => {
   }
 
   return (
-    <Container fluid  style={{marginBottom:"4%"}}>
+    <Container fluid style={{ marginBottom: "4%" }}>
       <Row>
         <Col className="detailed">
           <Button id="back" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-left" onClick={subtract} /></Button>
