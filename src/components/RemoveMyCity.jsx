@@ -3,15 +3,6 @@ import { Button, Card, Row } from 'react-bootstrap'
 
 
 function RemoveMyCity() {
-
-
-
-  // function deleteCity() {
-  //   let deleteArray = [...store.cityListLocalStorage]
-
-  // }
-
-
   return (
     <>
       <Row xs={2} md={4} lg={6}>
@@ -24,16 +15,13 @@ function RemoveMyCity() {
               {myCityName}
             </Button>
             <Button variant="danger" className="city" onClick={() => {
-              let cityToDelete = { myCityName, myCityTimeZone }
+              const cityToDelete = { myCityName, myCityTimeZone };
               console.log(cityToDelete);
-              let filter = store.cityListLocalStorage.filter((city) => {
-                return city !== cityToDelete
-              })
+              const filter = store.cityListLocalStorage.filter((city) => JSON.stringify(city) !== JSON.stringify(cityToDelete));
+              store.cityListLocalStorage = filter;
               store.save()
-              console.log(store.cityListLocalStorage);
               console.log(filter);
-            }
-            } >
+            }} >
               Remove city
             </Button>
           </Card>)}
