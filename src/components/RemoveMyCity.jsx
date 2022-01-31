@@ -1,12 +1,19 @@
 import store from "../utilities/localStore"
 import { Button, Card, Row } from 'react-bootstrap'
+import { useEffect, useState } from "react";
 
 
 function RemoveMyCity() {
+  const [myCityCard, uppdateRemovedCity] = useState(store.cityListLocalStorage);
+
+  useEffect(() => {
+    uppdateRemovedCity(store.cityListLocalStorage)
+  }, [store.cityListLocalStorage])
+
   return (
     <>
       <Row xs={2} md={4} lg={6}>
-        {store.cityListLocalStorage.map(({ myCityName, myCityTimeZone }) =>
+        {myCityCard.map(({ myCityName, myCityTimeZone }) =>
           <Card
             className='myCityName'>
             <Card.Img variant="top"
@@ -16,11 +23,10 @@ function RemoveMyCity() {
             </Button>
             <Button variant="danger" className="city" onClick={() => {
               const cityToDelete = { myCityName, myCityTimeZone };
-              console.log(cityToDelete);
               const filter = store.cityListLocalStorage.filter((city) => JSON.stringify(city) !== JSON.stringify(cityToDelete));
               store.cityListLocalStorage = filter;
               store.save()
-              console.log(filter);
+              uppdateRemovedCity(store.cityListLocalStorage)
             }} >
               Remove city
             </Button>
