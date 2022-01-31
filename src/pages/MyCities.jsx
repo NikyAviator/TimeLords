@@ -13,15 +13,16 @@ function MyCities() {
         <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
         {<Row xs={2} md={4} lg={6}>
 
-          {store.cityList.map(({ myCity }) => (
+          {store.cityListLocalStorage.map(({ myCityName }) =>
             <Card
-              className='myCityCards'>
+              className='myCityName'>
               <Card.Img variant="top"
-                src={`https://source.unsplash.com/random/640x360/?${myCity}-downtown`} />
+                src={`https://source.unsplash.com/random/640x360/?${myCityName}-downtown`} />
               <Button variant="light" className="city">
-                {myCity}
+                {myCityName}
               </Button>
-            </Card>))}
+
+            </Card>)}
         </Row>}
       </div>
     </>
