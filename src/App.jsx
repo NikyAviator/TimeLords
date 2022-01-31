@@ -4,13 +4,17 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import MyCities from './pages/MyCities';
 import Clock from './pages/Clock';
+import store from './utilities/localStore';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
-// SUP!
 
-function App() { // LIKE A SOMEBODY
+
+function App() {
+
+  store.cityListLocalStorage = store.cityListLocalStorage || []
+
   return (<div className="body">
     <BrowserRouter>
 

@@ -1,27 +1,31 @@
 import { useState, useEffect } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Alert from 'react-bootstrap/Alert'
 import store from '../utilities/localStore';
-import useStates from '../utilities/useStates';//Import custom hook from utilities
-//This hook reset the DOM elements(Form.Control and Form.Select)
+import useStates from '../utilities/useStates';
+import { Button, Card, Row, Form, Alert } from 'react-bootstrap'
+import RemoveMyCity from './RemoveMyCity';
+
 const AddCityForm = () => {
-  const [errors, setErrors] = useState([])
-  const [options, setOptions] = useState([])
+  const [timeZoneOptions, setTimeZoneOptions] = useState([])
   const [city, setCity] = useState('')
   const [timeZone, setTimeZone] = useState('')
-  const [myCityList, setMyCityList] = useState([]);//get a state variable myCityList
 
-  useEffect(async () => {
-    setOptions(await (await fetch('/public/json/timezones.json')).json())
-  }, [])
 
-  let emptyFormValues = { //set the emptyFormValues myCity and myTimezone to ''
-    myCity: '',           //myCity and myTimezone should match the DOM elements' value
-    myTimezone: ''
+  const [errors, setErrors] = useState([])
+
+  let emptymyNewCityObject = {
+    myCityName: '',
+    myCityTimeZone: ''
   };
 
-  const [formValues, updateFormValue] = useStates({ ...emptyFormValues });
+  const [myNewCityObject, updateFormValue] = useStates({ ...emptymyNewCityObject });
+
+  let { myCityName, myCityTimeZone } = myNewCityObject;
+
+
+  useEffect(async () => {
+    setTimeZoneOptions(await (await fetch('/public/json/timezones.json')).json())
+  }, [])
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -31,36 +35,31 @@ const AddCityForm = () => {
     setErrors(errors.length === 0 ? [] : errors)
     resetForm();
   }
-  let { myCity, myTimezone } = formValues;  //myCity and myTimezone should match the DOM elements' value
-
-  useEffect(() => {
-    if (myCity != '' && myTimezone != '') {  //if myCity and myTimezone is not empty save them into myCityList
-      setMyCityList([...myCityList, formValues])
-    }// ...myCityList is the old array, and formValues is the new city and timezone that are                                              
-  }, [myCity, myTimezone]);                     //choosen by the user
 
   function handleCityInputChange(e) {
     e.preventDefault()
     setCity(e.target.value)
-    let { name, value } = e.target; //name is DOM element's (Form.Control) name and value is the DOM element's value 
-    updateFormValue({ [name]: value });//save them into FormValues
+    let { name, value } = e.target;
+    updateFormValue({ [name]: value });
   }
 
   function handleSelectTimeZoneChange(e) {
     e.preventDefault()
     setTimeZone(e.target.value)
-    let { name, value } = e.target; //name is DOM element's (Form.Select) name and value is the DOM element's value 
-    updateFormValue({ [name]: value });//save them into FormValues
-
+    let { name, value } = e.target;
+    updateFormValue({ [name]: value });
   }
+
+
   function saveCity() {
-    store.cityList.push(myCityList); //Save myCityList to localStore store's cityList
+    store.cityListLocalStorage.push(myNewCityObject);
     store.save();
   }
 
   const resetForm = () => {
-    updateFormValue({ ...emptyFormValues }); //empthFormValues and there is custom useStates hook is used here
+    updateFormValue({ ...emptymyNewCityObject });
   };
+
 
   return (
     <>
@@ -68,17 +67,17 @@ const AddCityForm = () => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>City Name</Form.Label>
-            <Form.Control name="myCity" type="text" value={myCity} placeholder="City" onChange={handleCityInputChange} />
+            <Form.Control name="myCityName" type="text" value={myCityName} placeholder="City" onChange={handleCityInputChange} />
             <Form.Text className="text-muted">
               Enter the name of the city you would like to add
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Time Zone</Form.Label>
-            <Form.Select name="myTimezone" value={myTimezone} onChange={handleSelectTimeZoneChange}>
+            <Form.Select name="myCityTimeZone" value={myCityTimeZone} onChange={handleSelectTimeZoneChange}>
               <option value="">-- Select a Time Zone --</option>
               {
-                options.map((option, index) => {
+                timeZoneOptions.map((option, index) => {
                   return <option key={index} value={option}>{option}</option>
                 })
               }
@@ -92,6 +91,9 @@ const AddCityForm = () => {
         {errors.map((error, index) => {
           return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
         })}
+        <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
+        <RemoveMyCity />
+
       </div>
     </>
   )
