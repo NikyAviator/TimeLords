@@ -37,7 +37,7 @@ function Home() {
 
         </Container>
 
-        <Container>
+        <Container className="mt-3 px-5 text-center">
           <CheckIfMyCitiesIsEmpty />
         </Container>
 
