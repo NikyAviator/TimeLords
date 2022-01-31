@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Alert from 'react-bootstrap/Alert'
 import store from '../utilities/localStore';
 import useStates from '../utilities/useStates';
+import { Button, Card, Row, Form, Alert } from 'react-bootstrap'
+import RemoveMyCity from './RemoveMyCity';
 
 const AddCityForm = () => {
   const [timeZoneOptions, setTimeZoneOptions] = useState([])
   const [city, setCity] = useState('')
   const [timeZone, setTimeZone] = useState('')
-  store.cityListLocalStorage = store.cityListLocalStorage || []
+
 
   const [errors, setErrors] = useState([])
 
@@ -92,6 +91,9 @@ const AddCityForm = () => {
         {errors.map((error, index) => {
           return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
         })}
+        <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
+        <RemoveMyCity />
+
       </div>
     </>
   )
