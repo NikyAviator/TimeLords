@@ -13,10 +13,11 @@ function MyCityCards() {
               className='cityCards'>
               <Card.Img variant="top"
                 src={`https://source.unsplash.com/random/640x360/?${myCityName}-downtown`} />
-              <Button variant="light" className="city">
-                {myCityName}
-              </Button>
-
+              <Card.Body>
+                <Button variant="light" className="city">
+                  {myCityName}
+                </Button>
+              </Card.Body>
             </Card>
           </Col>)}
       </Row>
