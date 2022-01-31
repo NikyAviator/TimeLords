@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import store from '../utilities/localStore';
 import useStates from '../utilities/useStates';
-import { Button, Card, Row, Form, Alert } from 'react-bootstrap'
+import { Button, Card, Row, Form, Alert, Container } from 'react-bootstrap'
 import RemoveMyCity from './RemoveMyCity';
 
 const AddCityForm = () => {
@@ -98,9 +98,10 @@ const AddCityForm = () => {
         {errors.map((error, index) => {
           return <Alert key={index} className="mb-3" variant="danger">{error}</Alert>
         })}
-        <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
-        <RemoveMyCity />
-
+        <Container className="mt-3 px-5 text-center">
+          <h1 style={{ marginLeft: "8%", marginRight: "8%" }}>My Cities</h1>
+          <RemoveMyCity />
+        </Container>
       </div>
     </>
   )
