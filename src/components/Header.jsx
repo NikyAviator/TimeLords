@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar, Offcanvas, Container } from 'react-bootstrap';
 export default function Header() {
   return (
-    <Navbar bg="light" expand={false}>
+    <Navbar expand={false}>
       <Container fluid>
         <Navbar.Brand href="/">
           <img
@@ -25,7 +25,7 @@ export default function Header() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              
+
               <Nav.Link href="/my_cities">My Cities</Nav.Link>
             </Nav>
 

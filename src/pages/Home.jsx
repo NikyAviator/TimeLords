@@ -20,36 +20,38 @@ function Home() {
 
   return (
     <>
-      <div className='header'><Header /></div>
-      <div className='main'><>
-        <Container className="mt-3 px-5">
-          <Figure alt="Logo for TimeLords" style={{
-            marginLeft: "6%",
-            marginTop: "2%"
-          }}>
-            <Figure.Image
-              src='images/Logo.svg'
-            />
-          </Figure>
-        </Container>
-        <Container >
-          <h3>My Cities:</h3>
+      <div className='backgroundHome'>
+        <div className='header'><Header /></div>
+        <div className='main'><>
+          <Container className="mt-3 px-5">
+            <Figure alt="Logo for TimeLords" style={{
+              marginLeft: "6%",
+              marginTop: "2%"
+            }}>
+              <Figure.Image
+                src='images/Logo.svg'
+              />
+            </Figure>
+          </Container>
+          <Container >
+            <h3>My Cities:</h3>
 
-        </Container>
+          </Container>
 
-        <Container className="mt-3 px-5 text-center">
-          <CheckIfMyCitiesIsEmpty />
-        </Container>
+          <Container className="mt-3 px-5 text-center">
+            <CheckIfMyCitiesIsEmpty />
+          </Container>
 
-        <Container className="pt-2" style={{ marginTop: "4%" }}>
-          <h3>Biggest Cities:</h3>
-        </Container>
-        < Container className="mt-3 px-5 text-center" style={{ marginBottom: "4%" }}>
-          <Row xs={2} md={4} lg={4}>
-            <CityList />
-          </Row>
-        </Container>
-      </>
+          <Container className="pt-2" style={{ marginTop: "4%" }}>
+            <h3>Biggest Cities:</h3>
+          </Container>
+          < Container className="mt-3 px-5 text-center" style={{ marginBottom: "4%" }}>
+            <Row xs={2} md={4} lg={4}>
+              <CityList />
+            </Row>
+          </Container>
+        </>
+        </div>
       </div>
     </>
   );

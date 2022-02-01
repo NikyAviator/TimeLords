@@ -10,6 +10,7 @@
   background-color: #7FC8A9 !important ;
   
 }
+
 .MyCities_Form
 {
   margin-top: 3%;
@@ -17,6 +18,14 @@
   margin-left: 8%;
   margin-bottom: 2%;
 }
+
+.backgroundHome{
+  background-image: url(./images/nasaBig.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+}
+
 /*CSS for Header_2 */
 .nav-color{
   background-color:#5f7a61 ;
@@ -26,7 +35,9 @@
 }
 /*Hamburger icon for mainpage*/
 .navbar-light .navbar-toggler-icon {
-    background-image: url(./images/list.svg) !important
+  background-image: url(./images/white-hamburger-menu-icon-24.jpg) !important;
+  width: 3em;
+  height: 3em;
 }
 
 /*CSS for sticky footer */
