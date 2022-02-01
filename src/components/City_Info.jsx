@@ -33,6 +33,7 @@ function CityInfo(props) {
         </Container>
         {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
         <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
+        {store.cityHistory.length > 0 && <CityCarousel {...{ cities: store.cityHistory, title: 'Last Visited Cities' }} />}
       </div>
     </>
   )
