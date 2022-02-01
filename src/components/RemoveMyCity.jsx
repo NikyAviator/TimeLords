@@ -29,9 +29,11 @@ function RemoveMyCity() {
                 <Card.Body>
                   <Link to={`/my_cities/${name}`} >
                     <Button variant="light" className="city" onClick={() => {
+                      const thisCity = { name, timezone }
                       store.name = store.name || [];
                       store.city = timezone;
                       store.name = name;
+                      store.cityHistory.push(thisCity);
                       store.save();
                     }}>
                       {name}
