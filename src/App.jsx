@@ -22,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:city" element={<Clock />} />
         <Route path="/my_cities" element={<MyCities />} />
+        <Route path="/my_cities/:city" element={<Clock />} />
       </Routes>
       <Footer />
     </BrowserRouter>
