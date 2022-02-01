@@ -13,14 +13,14 @@ const AddCityForm = () => {
   const [errors, setErrors] = useState([])
 
   let emptymyNewCityObject = {
-    myCityName: '',
-    myCityTimeZone: ''
+    name: '',
+    timezone: ''
   };
 
   const [myNewCityObject, updateFormValue] = useStates({ ...emptymyNewCityObject });
 
-  let { myCityName, myCityTimeZone } = myNewCityObject;
-  let checkTheCityIsThere = store.cityListLocalStorage.some((city) => JSON.stringify(city) == JSON.stringify(myNewCityObject));
+  let { name, timezone } = myNewCityObject;
+  let checkTheCityIsThere = store.cityList.some((city) => JSON.stringify(city) == JSON.stringify(myNewCityObject));
 
   useEffect(async () => {
     setTimeZoneOptions(await (await fetch('/public/json/timezones.json')).json())
@@ -58,7 +58,7 @@ const AddCityForm = () => {
 
     console.log(checkTheCityIsThere)
     if (checkTheCityIsThere == false) {
-      store.cityListLocalStorage.push(myNewCityObject);
+      store.cityList.push(myNewCityObject);
       store.save();
     }
   }
@@ -74,14 +74,14 @@ const AddCityForm = () => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>City Name</Form.Label>
-            <Form.Control name="myCityName" type="text" value={myCityName} placeholder="City" onChange={handleCityInputChange} />
+            <Form.Control name="name" type="text" value={name} placeholder="City" onChange={handleCityInputChange} />
             <Form.Text className="text-muted">
               Enter the name of the city you would like to add
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Time Zone</Form.Label>
-            <Form.Select name="myCityTimeZone" value={myCityTimeZone} onChange={handleSelectTimeZoneChange}>
+            <Form.Select name="timezone" value={timezone} onChange={handleSelectTimeZoneChange}>
               <option value="">-- Select a Time Zone --</option>
               {
                 timeZoneOptions.map((option, index) => {

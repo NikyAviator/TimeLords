@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 
 function RemoveMyCity() {
-  const [myCityCard, uppdateRemovedCity] = useState(store.cityListLocalStorage);
+  const [myCityCard, uppdateRemovedCity] = useState(store.cityList);
 
   useEffect(() => {
-    uppdateRemovedCity(store.cityListLocalStorage)
-  }, [store.cityListLocalStorage]);
+    uppdateRemovedCity(store.cityList)
+  }, [store.cityList]);
 
 
-  if (store.cityListLocalStorage == "") {
+  if (store.cityList == "") {
     return (<h3 style={{ paddingTop: "2%" }}>You have not added any cities</h3>)
   }
 
@@ -20,30 +20,30 @@ function RemoveMyCity() {
     return (
       <>
         <Row xs={2} md={4} lg={6}>
-          {myCityCard.map(({ myCityName, myCityTimeZone }) =>
+          {myCityCard.map(({ name, timezone }) =>
             <Col xs={12} md={4}>
               <Card
-                className='myCityName'>
+                className='name'>
                 <Card.Img variant="top"
-                  src={`https://source.unsplash.com/random/640x360/?${myCityName}-downtown`} />
+                  src={`https://source.unsplash.com/random/640x360/?${name}-downtown`} />
                 <Card.Body>
-                  <Link to={`/my_cities/${myCityName}`} >
+                  <Link to={`/my_cities/${name}`} >
                     <Button variant="light" className="city" onClick={() => {
-                      store.myCityName = store.myCityName || [];
-                      store.city = myCityTimeZone;
-                      store.myCityName = myCityName;
+                      store.name = store.name || [];
+                      store.city = timezone;
+                      store.name = name;
                       store.save();
                     }}>
-                      {myCityName}
+                      {name}
                     </Button>
                   </Link>
                 </Card.Body>
                 <Button variant="danger" className="city" onClick={() => {
-                  const cityToDelete = { myCityName, myCityTimeZone };
-                  const filter = store.cityListLocalStorage.filter((city) => JSON.stringify(city) !== JSON.stringify(cityToDelete));
-                  store.cityListLocalStorage = filter;
+                  const cityToDelete = { name, timezone };
+                  const filter = store.cityList.filter((city) => JSON.stringify(city) !== JSON.stringify(cityToDelete));
+                  store.cityList = filter;
                   store.save()
-                  uppdateRemovedCity(store.cityListLocalStorage)
+                  uppdateRemovedCity(store.cityList)
                 }} >
                   Remove city
                 </Button>

@@ -8,7 +8,7 @@ import MyCityCards from '../components/MyCityCards';
 function Home() {
 
   const CheckIfMyCitiesIsEmpty = () => {
-    if (store.cityListLocalStorage == "") {
+    if (store.cityList == "") {
       return (<h3>You have not added any cities</h3>)
     }
     else {

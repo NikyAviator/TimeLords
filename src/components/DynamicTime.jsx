@@ -41,9 +41,9 @@ const DynamicTime = (props) => {
     )
   }
   const CheckIfMyCity = () => {
-    if (window.location.href == `http://localhost:3000/my_cities/${store.myCityName}`) {
+    if (window.location.href == `http://localhost:3000/my_cities/${store.name}`) {
       return (<h3>
-        Time in your city: {store.myCityName}
+        Time in your city: {store.name}
       </h3>
       )
     }

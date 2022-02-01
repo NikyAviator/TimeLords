@@ -13,7 +13,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 function App() {
 
-  store.cityListLocalStorage = store.cityListLocalStorage || []
+  store.cityList = store.cityList || []
 
   return (<div className="body">
     <BrowserRouter>

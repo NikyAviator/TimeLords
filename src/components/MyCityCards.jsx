@@ -8,22 +8,22 @@ function MyCityCards() {
     <>
 
       <Row xs={2} md={4} lg={4}>
-        {store.cityListLocalStorage.map(({ myCityName, myCityTimeZone }) =>
+        {store.cityList.map(({ name, timezone }) =>
           <Col xs={12} md={4}>
             <Card
               className='cityCards'>
               <Card.Img variant="top"
-                src={`https://source.unsplash.com/random/640x360/?${myCityName}-downtown`} />
+                src={`https://source.unsplash.com/random/640x360/?${name}-downtown`} />
               <Card.Body>
-                <Link to={`/my_cities/${myCityName}`} >
+                <Link to={`/my_cities/${name}`} >
                   <Button variant="light" className="city" onClick={() => {
-                    store.myCityName = store.myCityName || [];
-                    store.city = myCityTimeZone;
-                    store.myCityName = myCityName;
+                    store.name = store.name || [];
+                    store.city = timezone;
+                    store.name = name;
                     store.save();
 
                   }}>
-                    {myCityName}
+                    {name}
                   </Button>
                 </Link>
               </Card.Body>
