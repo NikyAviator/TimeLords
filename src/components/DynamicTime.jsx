@@ -40,14 +40,18 @@ const DynamicTime = (props) => {
 
     )
   }
-  const checkIfMyCity = function CheckIfMyCity() {
+  const CheckIfMyCity = () => {
     if (window.location.href == `http://localhost:3000/my_cities/${store.myCityName}`) {
       return (<h3>
         Time in your city: {store.myCityName}
       </h3>
       )
     }
+    else {
+      return (<></>)
+    }
   }
+
 
   const [isToggle, setToggle] = useState(true);
 
@@ -61,7 +65,7 @@ const DynamicTime = (props) => {
     <Container className="box" >
       <Row>
         <Col>
-          <checkIfMyCity />
+          <CheckIfMyCity />
           <TimeZone />
 
           {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw", color: "white" }}> {timeString} </h3> : <AnalogClock getTimeZone={getTimeZone} />}
