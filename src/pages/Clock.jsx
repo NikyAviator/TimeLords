@@ -14,9 +14,7 @@ function Clock() {
   }, [city])
 
   function check() {
-    const result = list.filter(function (e) {
-      e.city_name.includes(city);
-    });
+    const result = list.filter((city_name) => JSON.stringify(city_name).includes(city));
     for (const value of result) {
       store.city = value.city_name;
       store.save();
