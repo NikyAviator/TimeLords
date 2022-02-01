@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "timezone": "Asia/Tokyo"
+  },
+  {
+    "id": 2,
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": 3,
+    "timezone": "Asia/Shanghai"
+  },
+  {
+    "id": 4,
+    "timezone": "America/Chicago"
+  },
+  {
+    "id": 5,
+    "timezone": "America/New_York"
+  },
+  {
+    "id": 6,
+    "timezone": "Asia/Manila"
+  },
+  {
+    "id": 7,
+    "timezone": "Australia/Sydney"
+  },
+  {
+    "id": 8,
+    "timezone": "Africa/Cairo"
+  },
+  {
+    "id": 9,
+    "timezone": "Europe/London"
+  },
+  {
+    "id": 10,
+    "timezone": "Europe/Stockholm"
+  },
+  {
+    "id": 11,
+    "timezone": "Europe/Paris"
+  },
+  {
+    "id": 12,
+    "timezone": "Asia/Hong_Kong"
+  },
+  {
+    "id": 13,
+    "timezone": "Asia/Karachi"
+  },
+  {
+    "id": 14,
+    "timezone": "Asia/Bangkok"
+  },
+  {
+    "id": 15,
+    "timezone": "Europe/Istanbul"
+  },
+  {
+    "id": 16,
+    "timezone": "America/Sao_Paulo"
+  },
+  {
+    "id": 17,
+    "timezone": "Africa/Johannesburg"
+  },
+  {
+    "id": 18,
+    "timezone": "America/Mexico_City"
+  },
+  {
+    "id": 19,
+    "timezone": "Africa/Algiers"
+  },
+  {
+    "id": 20,
+    "timezone": "Europe/Moscow"
+  }
+]

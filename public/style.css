@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
 @import url('css/time_zone_info.css');
-@import url('css/city_caousel.css');
+@import url('css/city_carousel.css');
 /* Testar så att style.css är korrekt implementerad/länkad */
 .navbar-green {
   background-color: #5f7a61;

@@ -1,3 +1,78 @@
 .city-carousel {
-  
+  justify-content: center;
+  align-items: center;
+}
+
+.city-carousel .title {
+  background: #5F7A61;
+  color: #2B372B;
+  text-align: center;
+}
+
+.city-carousel .thumbs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #D5EEBB;
+}
+
+/*Navigation buttons*/
+.city-carousel .thumbs-container button, .city-carousel .thumbs-container button:active, .city-carousel .thumbs-container button:focus,  .city-carousel .thumbs-container button:target{
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.city-carousel .thumbs-container button:hover {
+  background: none;
+  box-shadow: none;
+  cursor: default !important;
+}
+
+.city-carousel .thumbs-container #back, .city-carousel .thumbs-container #next {
+  height: 100%;
+}
+
+.city-carousel .thumbs-container #back {
+  margin-right: 2vh;
+}
+
+.city-carousel .thumbs-container .arrow {
+  filter: invert(48%) sepia(7%) saturate(1126%) hue-rotate(74deg) brightness(92%) contrast(91%);
+}
+
+.city-carousel .thumbs-container .arrow:hover {
+  cursor: pointer;
+  filter: invert(100%) sepia(13%) saturate(117%) hue-rotate(246deg) brightness(117%) contrast(100%);
+}
+
+.city-carousel .thumbs-container .arrow-right {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/*Cards*/
+.city-carousel .thumbs-container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 128px;
+  height: 128px;
+  background: none;
+}
+
+.city-carousel .thumbs-container .card button {
+  width: 100%;
+  border-radius: 0 0 .25rem .25rem;
+  box-shadow: none;
+  font-size: .65rem;
+  font-weight: bold;
+}
+
+.city-carousel .thumbs-container .card {
+  margin-right: 2vh;
 }
