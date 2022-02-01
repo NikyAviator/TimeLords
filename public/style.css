@@ -71,6 +71,8 @@ html,
   line-height: 1;
  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  margin: 0% 20% 0% 20% !important;
+  padding: 5% 0% 5% 0% !important;
   
 }
 
