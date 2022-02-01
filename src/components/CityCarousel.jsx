@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Container, Row, Col, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Button, Card, Collapse, Fade } from 'react-bootstrap'
 import store from '../utilities/localStore'
 
 const CityCarousel = (props) => {
@@ -9,6 +9,7 @@ const CityCarousel = (props) => {
 
   const [start, setStart] = useState(0)
   const [numberToRender, setNumberToRender] = useState(0)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     function getNumberToRender() {
@@ -36,14 +37,12 @@ const CityCarousel = (props) => {
   function back(e) {
     e.preventDefault()
     let index = start - 1 > 0 ? start - 1 : cities.length
-    console.log(index)
     setStart(index)
   }
 
   function next(e) {
     e.preventDefault()
     let index = start + 1 < cities.length ? start + 1 : 0
-    console.log(index)
     setStart(index)
   }
 
@@ -70,7 +69,6 @@ const CityCarousel = (props) => {
         {
           display.length > 0 && display.map((city, index) => {
             let imageLink = `https://source.unsplash.com/random/640x360/?${city.timezone.split('/')[1]}-downtown`
-            console.log(city.name)
             return (
               <Card key={index} id={cities.indexOf(city)} onClick={handleClick} style={{
                 backgroundImage: `url(${imageLink})`,
@@ -89,17 +87,25 @@ const CityCarousel = (props) => {
   return (
     <Container className="city-carousel" fluid>
       <Row>
-        <Col className="title p-2">
+        <Col className="title p-2"
+          onClick={() => setOpen(!open)}
+          aria-controls="collapsable_content"
+          aria-expanded={open}
+        >
           {title}
         </Col>
       </Row>
-      <Row>
-        <Col className="thumbs-container p-3">
-          <Button id="back"><img src="/images/arrow.svg" className="arrow arrow-left" onClick={back} /></Button>
-          {cities.length > 0 && <Thumbs {...{ cities, numberToRender }} />}
-          <Button id="next"><img src="/images/arrow.svg" className="arrow arrow-right" onClick={next} /></Button>
-        </Col>
-      </Row>
+      <Collapse in={open}>
+        <div id="collapsable_content">
+          <Row>
+            <Col className="thumbs-container p-3">
+              <Button id="back"><img src="/images/arrow.svg" className="arrow arrow-left" onClick={back} /></Button>
+              {cities.length > 0 && <Thumbs {...{ cities, numberToRender }} />}
+              <Button id="next"><img src="/images/arrow.svg" className="arrow arrow-right" onClick={next} /></Button>
+            </Col>
+          </Row>
+        </div>
+      </Collapse>
     </Container>
   )
 }

@@ -7,6 +7,12 @@
   background: #5F7A61;
   color: #2B372B;
   text-align: center;
+  cursor: pointer;
+}
+
+.city-carousel .title:hover {
+  background: #2B372B;
+  color: #5F7A61;
 }
 
 .city-carousel .thumbs-container {
