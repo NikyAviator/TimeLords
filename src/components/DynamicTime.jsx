@@ -24,6 +24,10 @@ const DynamicTime = (props) => {
     setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZone }))
   }
 
+  function getTimeZone() {
+    return store.city
+  }
+
   const TimeZone = function timeZoneAsString() {
     return (
 
@@ -49,7 +53,7 @@ const DynamicTime = (props) => {
       <Row>
         <Col>
           <TimeZone />
-          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw" }}> {timeString} </h3> : <AnalogClock />}
+          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw" }}> {timeString} </h3> : <AnalogClock getTimeZone={getTimeZone} />}
 
           <Button
             variant="custom"

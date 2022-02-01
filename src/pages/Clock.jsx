@@ -21,7 +21,6 @@ function Clock() {
     store.save();
   }
 
-  console.log(store.city)
   return (
     <>
       <>{ /*Header_2 är för de andra sidorna fö utom hemsidan*/}</>
