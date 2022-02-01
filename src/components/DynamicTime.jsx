@@ -30,14 +30,18 @@ const DynamicTime = (props) => {
 
   const TimeZone = function timeZoneAsString() {
     return (
+      <>
+        <h3>
+          Time in your city: {store.myCityName}
+        </h3>
+        <h3 style={{ paddingTop: "1%", color: "white" }}>
+          The time in timezone:{' '}
+          <b>
+            {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}
+          </b>
+        </h3>
 
-      <h3 style={{ paddingTop: "1%", color: "white" }}>
-        The time in{' '}
-        <b>
-          {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}
-        </b>
-      </h3>
-
+      </>
     )
   }
   const [isToggle, setToggle] = useState(true);
