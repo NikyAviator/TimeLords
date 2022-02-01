@@ -10,7 +10,6 @@ function Clock() {
 
   useEffect(async () => {
     setList(await (await fetch('/json/cities.json')).json())
-    console.log(city)
   }, [city])
 
   function check() {
