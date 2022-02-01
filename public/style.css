@@ -34,10 +34,33 @@
     font-family: 'Outfit', sans-serif;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    flex-direction:column;
 }
 .main {
     flex: 1;
+    position:relative;
+}
+html,
+.clock-body {
+  height: 100%;
+  width: 100%;
+}
+
+.clock-page{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.box{
+  background-color: rgba(49, 45, 45, 0.3);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 1;
+ -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  
 }
 
 /*CSS for digital-clock*/

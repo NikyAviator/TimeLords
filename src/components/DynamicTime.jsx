@@ -31,7 +31,7 @@ const DynamicTime = (props) => {
   const TimeZone = function timeZoneAsString() {
     return (
 
-      <h3 style={{ paddingTop: "1%" }}>
+      <h3 style={{ paddingTop: "1%", color: "white" }}>
         The time in{' '}
         <b>
           {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}
@@ -49,16 +49,15 @@ const DynamicTime = (props) => {
   }
 
   return (
-    <Container className="text-center">
+    <Container className="box" >
       <Row>
         <Col>
           <TimeZone />
-          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw" }}> {timeString} </h3> : <AnalogClock getTimeZone={getTimeZone} />}
-
+          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw", color: "white" }}> {timeString} </h3> : <AnalogClock getTimeZone={getTimeZone} />}
           <Button
             variant="custom"
             onClick={toggleClock}>{isToggle ? 'Show Analog Clock' : 'Show Digital Clock'}</Button>
-          <h3 style={{ paddingBottom: "1%", paddingTop: "1%" }}>{dateString}</h3>
+          <h3 style={{ paddingBottom: "1%", paddingTop: "1%", color: "white" }}>{dateString}</h3>
         </Col>
       </Row>
     </Container>

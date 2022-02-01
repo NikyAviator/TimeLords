@@ -84,7 +84,7 @@ const DetailCities = (props) => {
   }
 
   return (
-    <Container fluid style={{ marginBottom: "4%" }}>
+    <Container fluid >
       <Row>
         <Col className="detailed">
           <Button id="back" onClick={(e) => { e.preventDefault() }}><img src="/images/arrow.svg" className="arrow arrow-left" onClick={subtract} /></Button>

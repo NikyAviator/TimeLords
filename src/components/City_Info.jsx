@@ -4,6 +4,7 @@ import DynamicTime from './DynamicTime'
 import DetailCities from './DetailCities'
 import store from '../utilities/localStore';
 import { useParams } from 'react-router-dom';
+import { Row, Container } from 'react-bootstrap';
 
 
 
@@ -18,14 +19,18 @@ function CityInfo(props) {
   }, []);
 
 
-
-  //the timezone information are ferched from API is stored in "timeZoneInfo"
-  //we need to render this on the screen I guess
-
   return <>
+    <div className="clock-body" style={{
+      backgroundImage: `url(https://source.unsplash.com/random/?${store.city.substring(store.city.indexOf("/") + 1)}-downtown)`,
+      backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center"
+    }}>
+      <Container className="clock-page" >
+        <DynamicTime {...{ timeZoneInfo }} />
+      </Container>
 
-    <DynamicTime {...{ timeZoneInfo }} />
-    {cities.length > 0 && <DetailCities {...{ cities, setCities, timeZoneInfo, setTimeZoneInfo }} />}
+      <div>
+        {cities.length > 0 && <DetailCities {...{ cities, setCities, timeZoneInfo, setTimeZoneInfo }} />}</div>
+    </div>
   </>
 
 }
