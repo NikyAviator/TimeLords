@@ -24,17 +24,15 @@ function CityInfo(props) {
 
   return (
     <>
-      <div className="clock-body" style={{
+      <Container fluid className="clock-page" style={{
         backgroundImage: `url(https://source.unsplash.com/random/?${store.city.substring(store.city.indexOf("/") + 1)}-downtown)`,
         backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center"
       }}>
-        <Container className="clock-page" >
-          <DynamicTime {...{ timeZoneInfo }} />
-        </Container>
-        {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
-        <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
-        {store.cityHistory.length > 0 && <CityCarousel {...{ cities: store.cityHistory, title: 'Last Visited Cities' }} />}
-      </div>
+        <DynamicTime {...{ timeZoneInfo }} />
+      </Container>
+      {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
+      <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
+      {store.cityHistory.length > 0 && <CityCarousel {...{ cities: store.cityHistory, title: 'Last Visited Cities' }} />}
     </>
   )
 
