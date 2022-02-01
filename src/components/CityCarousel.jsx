@@ -54,11 +54,13 @@ const CityCarousel = (props) => {
     if (cities.length > 0) {
       let index = start < cities.length ? start : 0
       for (let i = 0; i < numberToRender; i++) {
-        display.push(cities[index])
-        if (index + 1 < cities.length) {
-          index++
-        } else {
-          index = 0
+        if (i < cities.length) {
+          display.push(cities[index])
+          if (index + 1 < cities.length) {
+            index++
+          } else {
+            index = 0
+          }
         }
       }
     }

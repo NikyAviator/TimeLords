@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Row, Container } from 'react-bootstrap';
 import DynamicTime from './DynamicTime'
-import DetailCities from './DetailCities'
 import CityCarousel from './CityCarousel'
 import store from '../utilities/localStore';
 
@@ -32,9 +31,8 @@ function CityInfo(props) {
         <Container className="clock-page" >
           <DynamicTime {...{ timeZoneInfo }} />
         </Container>
+        {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
         <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
-        {/* <div>
-        {cities.length > 0 && <DetailCities {...{ cities, setCities, timeZoneInfo, setTimeZoneInfo }} />}</div>*/}
       </div>
     </>
   )
