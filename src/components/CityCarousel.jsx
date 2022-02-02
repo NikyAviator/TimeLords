@@ -28,9 +28,10 @@ const CityCarousel = (props) => {
 
   function handleClick(e) {
     e.preventDefault()
-    store.timezone = cities[e.target.id].timezone
+    store.timezone = cities[e.target.id].timezone;
+    store.city = cities[e.target.id].name;
     store.save()
-    let target = store.timezone.split('/')[1];
+    let target = store.city;
     navigate('/' + target)
   }
 
