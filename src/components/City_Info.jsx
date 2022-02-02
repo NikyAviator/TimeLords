@@ -32,10 +32,7 @@ function CityInfo(props) {
       </Container>
       {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
       <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
-      <>{ /* 
-      Det finns en bug, jag kommentar bort detta tills du fixar @Artur "last visited cities"
-      {store.cityHistory.length > 0 && <CityCarousel {...{ cities: store.cityHistory, title: 'Last Visited Cities' }} />}
-    */}</> </>
+    </>
   )
 
 }

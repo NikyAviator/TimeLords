@@ -21,7 +21,6 @@ function MyCityCards() {
                     store.city = store.city || [];
                     store.timezone = timezone;
                     store.city = name;
-                    store.cityHistory.push(thisCity);
                     store.save();
 
                   }}>
