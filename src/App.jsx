@@ -14,7 +14,9 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 function App() {
 
-  store.cityList = store.cityList || [];
+  store.cityList = store.cityList || []
+  store.history = store.history || []
+  store.save()
 
   return (<div className="body">
     <BrowserRouter>
