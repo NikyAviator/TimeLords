@@ -15,14 +15,24 @@ function Clock() {
   function check() {
     const result = list.filter((city_name) => JSON.stringify(city_name).includes(city));
     for (const value of result) {
-      store.city = value.city_name;
+      store.timezone = value.city_name;
       store.save();
     }
+  }
+
+  function checkIfMyCity() {
+    const result = store.cityList.filter((myCity) => JSON.stringify(myCity).includes(city));
+    for (const value of result) {
+      store.timezone = value.timezone;
+      store.city = value.name;
+    }
+
   }
 
   return (
     <>
       {check()}
+      {checkIfMyCity()}
       <>{ /*Header_2 är för de andra sidorna fö utom hemsidan*/}</>
       <div className='header'><Header_2 /></div>
       <div className='main'><City_Info /></div>

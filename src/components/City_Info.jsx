@@ -16,7 +16,7 @@ function CityInfo(props) {
     let citiesLargest = []
     //Extract the city name and time zone from cities_larges.json and push them into the cities array as "objects"
     citiesLargestJSON.map(city => citiesLargest.push({ name: getCityNameFromTimeZone(city.timezone), timezone: city.timezone }))
-    setTimeZoneInfo(store.city);
+    setTimeZoneInfo(store.timezone);
     setCitiesLargest(citiesLargest)
   }, []);
 
@@ -25,7 +25,7 @@ function CityInfo(props) {
   return (
     <>
       <Container fluid className="clock-page" style={{
-        backgroundImage: `url(https://source.unsplash.com/random/?${store.city.substring(store.city.indexOf("/") + 1)}-downtown)`,
+        backgroundImage: `url(https://source.unsplash.com/random/?${store.timezone.substring(store.timezone.indexOf("/") + 1)}-downtown)`,
         backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center"
       }}>
         <DynamicTime {...{ timeZoneInfo }} />

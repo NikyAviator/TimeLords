@@ -23,7 +23,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:city" element={<Clock />} />
         <Route path="/my_cities" element={<MyCities />} />
-        <Route path="/my_cities/:city" element={<Clock />} />
+
+        {/* <Route path="/*" element={<MissingPage />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

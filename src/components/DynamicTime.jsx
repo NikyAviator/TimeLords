@@ -18,14 +18,14 @@ const DynamicTime = (props) => {
 
   function update() {
     let date = new Date()
-    let timeZone = store.city
+    let timeZone = store.timezone
     setTimeZone(timeZone)
     setTimeString(date.toLocaleTimeString('sv-SE', { timeZone: timeZone }))
     setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZone }))
   }
 
   function getTimeZone() {
-    return store.city
+    return store.timezone
   }
 
   const TimeZone = function timeZoneAsString() {
