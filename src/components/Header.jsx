@@ -7,7 +7,7 @@ export default function Header() {
       <Container fluid>
         <Navbar.Brand href="/">
           <img
-            src="images/Logo.svg"
+            src="/images/Logo.svg"
             width="200"
             height="60"
             className="d-inline-block align-top"

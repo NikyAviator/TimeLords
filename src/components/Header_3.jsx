@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Navbar,  Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 export default function Header_3() {
   return (
     <Navbar className="nav-color" expand="lg">
@@ -7,7 +7,7 @@ export default function Header_3() {
 
         <Navbar.Brand href="/">
           <img
-            src="images/Logo.svg"
+            src="/images/Logo.svg"
             width="200"
             height="60"
             className="d-inline-block align-top"
@@ -16,10 +16,10 @@ export default function Header_3() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-        <Nav >
-          <Nav.Link href="/">Home</Nav.Link>
+          <Nav >
+            <Nav.Link href="/">Home</Nav.Link>
 
-        </Nav>
+          </Nav>
         </Navbar.Collapse>
       </Container>
 
