@@ -31,6 +31,7 @@ function CityInfo(props) {
         <DynamicTime {...{ timeZoneInfo }} />
       </Container>
       {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
+      {store.history.length > 0 && <CityCarousel {...{ cities: store.history, title: 'Last Visited' }} />}
       <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
     </>
   )
