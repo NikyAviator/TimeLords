@@ -32,7 +32,7 @@ const CityCarousel = (props) => {
     store.city = cities[e.target.id].name;
     store.save()
     let target = store.city;
-    navigate('/' + target)
+    navigate('/clock/' + target)
   }
 
   function back(e) {

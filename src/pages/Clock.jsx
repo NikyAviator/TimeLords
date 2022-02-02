@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Header_2 from '../components/Header_2';
 import City_Info from '../components/City_Info';
 import store from '../utilities/localStore';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function Clock() {
 
   let { city } = useParams();
   const [list, setList] = useState([]);
+
 
   useEffect(async () => {
     setList(await (await fetch('/json/cities.json')).json())
@@ -18,6 +19,7 @@ function Clock() {
       store.timezone = value.city_name;
       store.save();
     }
+
   }
 
   function checkIfMyCity() {

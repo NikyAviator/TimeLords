@@ -15,7 +15,7 @@ function MyCityCards() {
               <Card.Img variant="top"
                 src={`https://source.unsplash.com/random/640x360/?${name}-downtown`} />
               <Card.Body>
-                <Link to={`/${name}`} >
+                <Link to={`/clock/${name}`} >
                   <Button variant="light" className="city" onClick={() => {
                     const thisCity = { name, timezone };
                     store.city = store.city || [];
