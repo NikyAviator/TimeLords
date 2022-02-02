@@ -18,7 +18,6 @@ const AddCityForm = () => {
   };
 
   const [myNewCityObject, updateFormValue] = useStates({ ...emptymyNewCityObject });
-
   let { name, timezone } = myNewCityObject;
   let checkTheCityIsThere = store.cityList.some((city) => JSON.stringify(city) == JSON.stringify(myNewCityObject));
 
@@ -26,12 +25,11 @@ const AddCityForm = () => {
     setTimeZoneOptions(await (await fetch('/public/json/timezones.json')).json())
   }, [])
 
-
   function handleSubmit(e) {
     e.preventDefault();
     let errors = [];
     if (city === '') { errors.push('You need to enter a city name') }
-    if (timeZone === "") { errors.push('You need to select a time zone') }
+    if (timeZone === '') { errors.push('You need to select a time zone') }
     if (checkTheCityIsThere == true) {
       errors.push('You already have the same city in your list!')
     }
@@ -56,8 +54,7 @@ const AddCityForm = () => {
 
   function saveCity() {
 
-    console.log(checkTheCityIsThere)
-    if (checkTheCityIsThere == false) {
+    if (checkTheCityIsThere == false && myNewCityObject.name != '' && myNewCityObject.timezone != '') {
       store.cityList.push(myNewCityObject);
       store.save();
     }
