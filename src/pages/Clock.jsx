@@ -29,6 +29,7 @@ function Clock() {
     for (const value of result) {
       store.timezone = value.timezone;
       store.city = value.name;
+      store.save();
     }
   }
 
