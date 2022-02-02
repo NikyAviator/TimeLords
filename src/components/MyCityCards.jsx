@@ -18,9 +18,9 @@ function MyCityCards() {
                 <Link to={`/${name}`} >
                   <Button variant="light" className="city" onClick={() => {
                     const thisCity = { name, timezone };
-                    store.name = store.name || [];
+                    store.city = store.city || [];
                     store.timezone = timezone;
-                    store.name = name;
+                    store.city = name;
                     store.cityHistory.push(thisCity);
                     store.save();
 

@@ -14,6 +14,7 @@ function CityCards(props) {
   function saveCity() {
     const thisCity = { name: city_name.substring(city_name.indexOf("/") + 1), timezone: city_name }
     store.timezone = city_name;
+    store.city = city_name.split('/')[1];
     store.cityHistory.push(thisCity);
     store.save();
   }
