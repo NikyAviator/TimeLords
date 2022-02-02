@@ -43,13 +43,18 @@ function Clock() {
             name: timezone.split('/')[1].replace('_', ' '),
             timezone: timezone
           }
-          console.log(cityToSave)
         }
       }
     }
     if (cityToSave) {
-      let cityList = store.cityList;
-      console.log(cityList)
+      let history = store.history;
+      if (history) {
+        history = history.filter(entry => entry.name !== cityToSave.name)
+      }
+      history.unshift(cityToSave)
+      if (history.length > 20) history.pop()
+      store.history = history
+      store.save()
     }
   }
 
