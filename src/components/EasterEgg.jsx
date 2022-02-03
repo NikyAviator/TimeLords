@@ -24,14 +24,15 @@ const EasterEgg = () => {
     $('#player').each(function () {
       if (toggle) {
         this.play();
-        setInterval(() => {
+        const interval = setInterval(() => {
           $('.easter-egg .image').css({
             backgroundImage: 'url("../images/easter-egg.png")',
             backgroundSize: 'auto 100%',
             backgroundRepeat: 'no-reapeat'
           })
         }, 4000)
-        toggle = false
+        toggle = false;
+        return () => clearInterval(interval)
       }
     });
   }
