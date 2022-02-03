@@ -3,8 +3,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap'
 import AnalogClock from './AnalogClock'
 import store from '../utilities/localStore'
 
-const DynamicTime = (props) => {
-
+const DynamicTime = () => {
   const [timeZone, setTimeZone] = useState('')
   const [timeString, setTimeString] = useState(new Date().toLocaleTimeString('sv-SE', { timeZone: store.timezone }))
   const [dateString, setDateString] = useState('')
@@ -24,10 +23,6 @@ const DynamicTime = (props) => {
     setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZone }))
   }
 
-  function getTimeZone() {
-    return store.timezone
-  }
-
   const TimeZone = function timeZoneAsString() {
     return (<>
       <h3 style={{ color: "white" }}>The time in: {store.city.replace('_', ' ')} </h3>
@@ -41,10 +36,7 @@ const DynamicTime = (props) => {
     )
   }
 
-
-
   const [isToggle, setToggle] = useState(true);
-
 
   function toggleClock() {
     setToggle(
@@ -57,7 +49,7 @@ const DynamicTime = (props) => {
         <Col>
           <TimeZone />
 
-          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw", color: "white" }}> {timeString} </h3> : <AnalogClock getTimeZone={getTimeZone} />}
+          {isToggle ? <h3 className="digital-clock" style={{ fontSize: "8vw", color: "white" }}> {timeString} </h3> : <AnalogClock />}
           <Button
             variant="custom"
             onClick={toggleClock}>{isToggle ? 'Show Analog Clock' : 'Show Digital Clock'}</Button>
