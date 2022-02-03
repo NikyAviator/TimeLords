@@ -23,10 +23,6 @@ const DynamicTime = () => {
     setDateString(date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: timeZone }))
   }
 
-  function getTimeZone() {
-    return store.timezone
-  }
-
   const TimeZone = function timeZoneAsString() {
     return (<>
       <h3 style={{ color: "white" }}>The time in: {store.city.replace('_', ' ')} </h3>
@@ -40,10 +36,7 @@ const DynamicTime = () => {
     )
   }
 
-
-
   const [isToggle, setToggle] = useState(true);
-
 
   function toggleClock() {
     setToggle(
