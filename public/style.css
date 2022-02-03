@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
+@import url('css/digital_clock.css');
+@import url('css/analog_clock.css');
 @import url('css/city_carousel.css');
 /* Testar så att style.css är korrekt implementerad/länkad */
 .navbar-green {
@@ -66,160 +68,17 @@ html,
   width: 100%;
 }
 .box{
-  background-color: rgba(49, 45, 45, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(49, 45, 45, 0.45);
   border-radius: 5px;
   text-align: center;
   line-height: 1;
  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(3px);
-  margin: 0% 20% 0% 20% !important;
-  padding: 5% 0% 5% 0% !important;
-  
+  backdrop-filter: blur(10px);
 }
 
-/*CSS for digital-clock*/
-.digital-clock {
-margin-top: 7.5%;
-margin-bottom: 7.5%;
-padding-top: 3.8%;
-padding-bottom: 3.8%;
-}
-@media screen and (max-width:360px) {
-       .digital-clock{ margin:120px;
-      }
-}
-@media screen and (max-width:412px) {
-       .digital-clock{ margin:120px;
-      }
-}
-@media screen and (max-width:360px) {
-       .digital-clock{ margin:120px;
-      }
-}
 
-/* CSS for the analog clock */
 
-.analogClockBody {
-box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.analogClock{
-  background-color: rgb(213,238,187);
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 2px solid black;
-  position: relative;
-  box-shadow: 0px 0px 18px #232422;
-}
-
-.analogClock span {
-  position: absolute;
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.analogClock .Hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  border: 1px solid white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  transform-origin: bottom;
-  z-index: 10;
-}
-
-.analogClock .secondHand {
-  width: 5px;
-  height: 45%;
-  background-color: rgb(127,200,169);
-}
-
-.analogClock .minuteHand {
-  width: 7px;
-  height: 40%;
-  background-color: rgb(95,122,97); 
-}
-
-.analogClock .hourHand {
-  width: 7px;
-  height: 30%;
-  background-color: rgb(68,73,65);
-}
-
-.midCircle{
-  position: absolute;
-  background-color: black;
-  z-index: 11;
-  width: 15px;
-  height: 15px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.clock12 {
-  top: 10px;
-  left: 46%;
-}
-
-.clock1 {
-  top: 10%;
-  right: 26%;
-}
-
-.clock11{
-  top: 10%;
-  left: 26%;
-}
-
-.clock2 {
-  top: 25%;
-  right: 10%;
-}
-
-.clock3 {
-  right: 10px;
-  top: 46%;
-}
-
-.clock4 {
-  right: 30px;
-  top: 67%;
-}
-
-.clock5 {
-  right: 78px;
-  top: 80%;
-}
-
-.clock6 {
-  bottom: 10px;
-  left: 50%;
-}
-
-.clock7 {
-  left: 80px;
-  top: 82%;
-}
-
-.clock8 {
-  left: 30px;
-  top: 67%;
-}
-
-.clock9 {
-  left: 10px;
-  top: 46%;
-}
-
-.clock10 {
-  top: 25%;
-  left: 10%;
-}

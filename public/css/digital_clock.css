@@ -1,0 +1,13 @@
+.digital-clock {
+  min-width: 320px;
+  max-width: 768px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-clock .digit {
+  width: 12.5%;
+  filter: invert(98%) sepia(97%) saturate(130%) hue-rotate(112deg) brightness(121%) contrast(100%);
+}
