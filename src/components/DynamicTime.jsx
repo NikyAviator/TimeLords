@@ -3,8 +3,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap'
 import AnalogClock from './AnalogClock'
 import store from '../utilities/localStore'
 
-const DynamicTime = (props) => {
-
+const DynamicTime = () => {
   const [timeZone, setTimeZone] = useState('')
   const [timeString, setTimeString] = useState(new Date().toLocaleTimeString('sv-SE', { timeZone: store.timezone }))
   const [dateString, setDateString] = useState('')
