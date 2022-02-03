@@ -22,7 +22,17 @@ const EasterEgg = () => {
       })
     }
     $('#player').each(function () {
-      if (toggle) this.play();
+      if (toggle) {
+        this.play();
+        setInterval(() => {
+          $('.easter-egg .image').css({
+            backgroundImage: 'url("../images/easter-egg.png")',
+            backgroundSize: 'auto 100%',
+            backgroundRepeat: 'no-reapeat'
+          })
+        }, 4000)
+        toggle = false
+      }
     });
   }
 
