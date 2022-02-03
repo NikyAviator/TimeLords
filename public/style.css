@@ -78,8 +78,10 @@ html,
 
 /*CSS for digital-clock*/
 .digital-clock {
-margin-top: 7.8%;
-margin-bottom: 7.8%;
+margin-top: 7.5%;
+margin-bottom: 7.5%;
+padding-top: 3.8%;
+padding-bottom: 3.8%;
 }
 @media screen and (max-width:360px) {
        .digital-clock{ margin:33%;
