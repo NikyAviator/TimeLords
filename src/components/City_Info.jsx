@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Row, Container } from 'react-bootstrap';
 import DynamicTime from './DynamicTime'
 import CityCarousel from './CityCarousel'
+import EeasterEgg from './EasterEgg'
 import store from '../utilities/localStore';
 
 function CityInfo() {
@@ -33,6 +34,7 @@ function CityInfo() {
       {store.cityList.length > 0 && <CityCarousel {...{ cities: store.cityList, title: 'My Cities' }} />}
       {store.history.length > 0 && <CityCarousel {...{ cities: store.history, title: 'Last Visited' }} />}
       <CityCarousel {...{ cities: citiesLargest, title: 'Largest Cities' }} />
+      <EeasterEgg />
     </>
   )
 

@@ -1,0 +1,25 @@
+.easter-egg {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.easter-egg .image {
+   width: 128px;
+  height: 128px;
+  background-image: url('/images/easter-egg.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.easter-egg .image:hover {
+  cursor: pointer;
+   width: 124px;
+  height: 144px;
+}
+
+#player {
+  visibility: hidden;
+}

@@ -3,6 +3,7 @@
 @import url('css/digital_clock.css');
 @import url('css/analog_clock.css');
 @import url('css/city_carousel.css');
+@import url('css/easter_egg.css');
 /* Testar så att style.css är korrekt implementerad/länkad */
 .navbar-green {
   background-color: #5f7a61;
