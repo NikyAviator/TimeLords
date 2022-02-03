@@ -6,7 +6,7 @@ import store from '../utilities/localStore'
 const DynamicTime = (props) => {
 
   const [timeZone, setTimeZone] = useState('')
-  const [timeString, setTimeString] = useState('00:00:00')
+  const [timeString, setTimeString] = useState(new Date().toLocaleTimeString('sv-SE', { timeZone: store.timezone }))
   const [dateString, setDateString] = useState('')
 
   useEffect(function uppdateTime() {
