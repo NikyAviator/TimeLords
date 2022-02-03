@@ -37,9 +37,19 @@ const EasterEgg = () => {
     });
   }
 
+  function handleOnMouseOver(e) {
+    e.preventDefault()
+    $('.easter-egg .image').css('visibility', 'visible')
+  }
+
+  function handleOnMouseOut(e) {
+    e.preventDefault()
+    $('.easter-egg .image').css('visibility', 'hidden')
+  }
+
   return (
     <>
-      <Container className="easter-egg py-5" fluid>
+      <Container className="easter-egg py-5" fluid onMouseOver={handleOnMouseOver} onMouseOut={handleOnMouseOut}>
         <div className="image" onClick={handleClick}></div>
         <audio className="hidden" id="player" controls="controls">
           <source id="mp3_src" src="/sound/easter-egg.mp3" type="audio/mp3" />
