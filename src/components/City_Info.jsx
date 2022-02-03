@@ -6,7 +6,7 @@ import DynamicTime from './DynamicTime'
 import CityCarousel from './CityCarousel'
 import store from '../utilities/localStore';
 
-function CityInfo(props) {
+function CityInfo() {
   const [timeZoneInfo, setTimeZoneInfo] = useState([]);
   const [citiesLargest, setCitiesLargest] = useState([])
 
