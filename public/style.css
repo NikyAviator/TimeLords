@@ -46,6 +46,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction:column;
+    background-color: rgb(213,238,187);
 }
 .main {
     flex: 1;
@@ -70,7 +71,7 @@ html,
   text-align: center;
   line-height: 1;
  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
   margin: 0% 20% 0% 20% !important;
   padding: 5% 0% 5% 0% !important;
   

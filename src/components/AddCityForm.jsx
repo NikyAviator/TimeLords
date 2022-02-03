@@ -35,6 +35,7 @@ const AddCityForm = () => {
     }
     setErrors(errors.length === 0 ? [] : errors)
     resetForm();
+
   }
 
   function handleCityInputChange(e) {
@@ -62,6 +63,8 @@ const AddCityForm = () => {
 
   const resetForm = () => {
     updateFormValue({ ...emptymyNewCityObject });
+    setCity("")
+    setTimeZone("")
   };
 
 
