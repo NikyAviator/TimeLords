@@ -84,7 +84,15 @@ padding-top: 3.8%;
 padding-bottom: 3.8%;
 }
 @media screen and (max-width:360px) {
-       .digital-clock{ margin:33%;
+       .digital-clock{ margin:120px;
+      }
+}
+@media screen and (max-width:412px) {
+       .digital-clock{ margin:120px;
+      }
+}
+@media screen and (max-width:360px) {
+       .digital-clock{ margin:120px;
       }
 }
 
