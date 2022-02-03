@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from 'react'
 import store from "../utilities/localStore";
 
-const AnalogClock = (props) => {
+const AnalogClock = () => {
   const [timeString, setTimeString] = useState(new Date().toLocaleTimeString('sv-SE', { timeZone: store.timeZone }))
   const [hour, setHour] = useState('')
   const [min, setMin] = useState('')
