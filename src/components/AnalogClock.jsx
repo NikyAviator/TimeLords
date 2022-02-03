@@ -3,19 +3,17 @@ import { useEffect, useState } from 'react'
 import store from "../utilities/localStore";
 
 const AnalogClock = (props) => {
-
   // Intl.DateTimeFormat().resolvedOptions().timeZone)
 
+  const [timeString, setTimeString] = useState(new Date().toLocaleTimeString('sv-SE', { timeZone: store.timeZone }))
   const [hour, setHour] = useState('')
   const [min, setMin] = useState('')
   const [sec, setSec] = useState('')
 
   useEffect(function uppdateTime() {
+    update()
     const interval = setInterval(() => {
-      let timeZone = props.getTimeZone()
-      let timeZoneToString = new Date().toLocaleTimeString('sv-SE', { timeZone })
-      getTimeFromString(timeZoneToString)
-      console.log(hour);
+      update()
     }, 1000);
     return () => clearInterval(interval)
   }, [])
@@ -25,6 +23,12 @@ const AnalogClock = (props) => {
     setHour(parseInt(arr[0]));
     setMin(parseInt(arr[1]));
     setSec(parseInt(arr[2]));
+  }
+
+  function update() {
+    let timeString = new Date().toLocaleTimeString('sv-SE', { timeZone: store.timezone })
+    setTimeString(timeString)
+    getTimeFromString(timeString)
   }
 
 
