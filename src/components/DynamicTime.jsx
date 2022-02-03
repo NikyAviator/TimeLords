@@ -30,8 +30,8 @@ const DynamicTime = (props) => {
 
   const TimeZone = function timeZoneAsString() {
     return (<>
-      <h3 style={{ paddingTop: "1%", color: "white" }}>The time in: {store.city.replace('_', ' ')} </h3>
-      <h3 style={{ paddingTop: "1%", color: "white" }}>
+      <h3 style={{ color: "white" }}>The time in: {store.city.replace('_', ' ')} </h3>
+      <h3 style={{ color: "white" }}>
         Timezone: {' '}
         <b>
           {timeZone.split('/').reverse().map(element => element.replace('_', ' ')).join(', ')}

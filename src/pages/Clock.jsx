@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header_2 from '../components/Header_2';
 import City_Info from '../components/City_Info';
 import store from '../utilities/localStore';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 function Clock() {
 
   let { city } = useParams();
@@ -19,6 +19,7 @@ function Clock() {
     const result = list.filter((city_name) => JSON.stringify(city_name).includes(city));
     for (const value of result) {
       store.timezone = value.city_name;
+      store.city = value.city_name.split('/')[1].replace('_', ' ')
       store.save();
     }
   }
@@ -28,6 +29,7 @@ function Clock() {
     for (const value of result) {
       store.timezone = value.timezone;
       store.city = value.name;
+      store.save();
     }
   }
 
